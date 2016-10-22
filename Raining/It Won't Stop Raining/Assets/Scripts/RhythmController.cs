@@ -4,7 +4,7 @@ using System.Collections;
 
 public class RhythmController : MonoBehaviour {
 
-	Node[] master = { new Node (0.00f, 1.00f, Vector2.up) };
+	Node[] master = { new Node (2.00f, 1.00f, Vector2.up) };
 	Node[] mArr;
 	List<GameObject> mDeployed;
 	float mTime;
@@ -13,6 +13,7 @@ public class RhythmController : MonoBehaviour {
 	void Start () {
 		mArr = master;
 		mTime = 0.00f;
+		mDeployed = new List<GameObject> ();
 	}
 
 	// Update is called once per frame
@@ -21,16 +22,20 @@ public class RhythmController : MonoBehaviour {
 		Node next = mArr [0];
 		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 1.5f * Time.deltaTime);
 		if (res) {
-			//fire the next boi, send it on its way, add it to deployed, remove it from mArr
+			Debug.Log ("I have found your arrow, boi!");
+			deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
 		}
 	}
 
 	private void deployArrow(float speed, Vector2 direction){
 		string name = "Rhythm/" + direction.ToString();
 		GameObject go = (GameObject)(Resources.Load("Prefabs/" + name, typeof(GameObject)));
-		go.GetComponent<Rigidbody2D> ().transform.position = this.gameObject.transform.position;
-		go.GetComponent<Rigidbody2D> ().velocity = direction * speed;
+		Rigidbody2D rb = go.GetComponent<Rigidbody2D> ();
+		rb.transform.position =  Camera.main.ScreenToWorldPoint(this.gameObject.transform.position);
+		rb.transform.position = Vector3();
+		rb.velocity = direction * speed;
 		mDeployed.Add (go);
+		GameObject.Instantiate (go);
 	}
 }
 

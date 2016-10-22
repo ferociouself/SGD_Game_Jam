@@ -41,13 +41,16 @@ public class ActivateController : MonoBehaviour {
 			case InteractableController.ActivateType.HackAndSlash:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_TOYSWORD)){
 					//Do things to start Hack and Slash!
+					Debug.Log("Hack and Slash Started!");
 				}else {
 					//Tell the player that they need an item.
+					Debug.Log("Need a sword!");
 				}
 				break;
 			case InteractableController.ActivateType.HideAndSeek:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_TREAT)){
 					//Do things to start Hide and Seek!
+					
 				} else {
 					//Tell the player that they need an item.
 				}
@@ -81,8 +84,9 @@ public class ActivateController : MonoBehaviour {
 				}
 				break;
 			default:
-				if ((int)type > InteractableController.ITEM_START) {
+				if ((int)type > InteractableController.ITEM_START - 1) {
 					playInventory.setInventoryActive(type);
+					Debug.Log(interactableObject);
 					interactableObject.SetActive(false);
 				}
 				break;

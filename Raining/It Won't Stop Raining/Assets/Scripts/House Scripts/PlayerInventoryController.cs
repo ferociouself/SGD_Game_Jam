@@ -14,7 +14,7 @@ public class PlayerInventoryController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		inventory = new Dictionary<InteractableController.ActivateType, bool>();
-		for (int i = InteractableController.ITEM_START; i < InteractableController.ACTIVATE_LENGTH; i++) {
+		for (int i = InteractableController.ITEM_START - 1; i < InteractableController.ACTIVATE_LENGTH; i++) {
 			inventory.Add((InteractableController.ActivateType)i, false);
 		}
 		ui = inventoryUIController.GetComponent<InventoryUIController>();

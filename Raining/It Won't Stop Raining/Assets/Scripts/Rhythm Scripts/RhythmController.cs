@@ -15,11 +15,11 @@ public class RhythmController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SPEED_V = 144.0f/189.0f * SPEED_H;
+		SPEED_V = 3.55f/6.94f * SPEED_H;
 
 		mArr = new List<Node>();
 		mArr.Add(new Node (2.00f, SPEED_V, Vector2.up));
-		mArr.Add(new Node (3.00f, SPEED_H, Vector2.left));
+		mArr.Add(new Node (2.04f, SPEED_H, Vector2.left));
 		mArr.Add(new Node (4.00f, SPEED_H, Vector2.right));
 		mArr.Add(new Node (6.00f, SPEED_V, Vector2.down));
 
@@ -59,6 +59,10 @@ public class RhythmController : MonoBehaviour {
 
 	public List<GameObject> getDeployed(){
 		return mDeployed;
+	}
+
+	private float GenBirthTime(float hit){
+		return hit - (Mathf.Abs(6.94f) / SPEED_H);
 	}
 }
 

@@ -270,6 +270,7 @@ GameObject:
   - 224: {fileID: 600912534}
   - 222: {fileID: 600912536}
   - 114: {fileID: 600912535}
+  - 114: {fileID: 600912537}
   m_Layer: 5
   m_Name: TopCircle
   m_TagString: Untagged
@@ -328,6 +329,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 600912533}
+--- !u!114 &600912537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600912533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f68074a240c4dc2a346dfc6b19a8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempo: 30
+  scale: 4
+  LERP_TIME: 0.5
 --- !u!1 &665627228
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +353,7 @@ GameObject:
   - 224: {fileID: 665627229}
   - 222: {fileID: 665627231}
   - 114: {fileID: 665627230}
+  - 114: {fileID: 665627232}
   m_Layer: 5
   m_Name: BottomCircle
   m_TagString: Untagged
@@ -396,6 +412,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 665627228}
+--- !u!114 &665627232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665627228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f68074a240c4dc2a346dfc6b19a8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempo: 30
+  scale: 4
+  LERP_TIME: 0.5
 --- !u!1 &762614037
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +436,7 @@ GameObject:
   - 224: {fileID: 762614038}
   - 222: {fileID: 762614040}
   - 114: {fileID: 762614039}
+  - 114: {fileID: 762614041}
   m_Layer: 5
   m_Name: LeftCircle
   m_TagString: Untagged
@@ -464,6 +495,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 762614037}
+--- !u!114 &762614041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762614037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f68074a240c4dc2a346dfc6b19a8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempo: 30
+  scale: 4
+  LERP_TIME: 0.5
 --- !u!1 &1020390290
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +965,7 @@ MonoBehaviour:
   RightCircle: {fileID: 1895485579}
   LeftCircle: {fileID: 762614037}
   DownCircle: {fileID: 665627228}
-  Difficulty: 0.7
+  Difficulty: 0.5
   BASE_F: 1000
   textField: {fileID: 1525053234}
 --- !u!1 &1895485579
@@ -933,6 +978,7 @@ GameObject:
   - 224: {fileID: 1895485580}
   - 222: {fileID: 1895485582}
   - 114: {fileID: 1895485581}
+  - 114: {fileID: 1895485583}
   m_Layer: 5
   m_Name: RightCircle
   m_TagString: Untagged
@@ -991,6 +1037,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895485579}
+--- !u!114 &1895485583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1895485579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f68074a240c4dc2a346dfc6b19a8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempo: 30
+  scale: 4
+  LERP_TIME: 0.5
 --- !u!1 &2132200933
 GameObject:
   m_ObjectHideFlags: 0

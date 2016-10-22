@@ -6,7 +6,6 @@ public class RhythmInputMgmt : MonoBehaviour {
 
 	/**TODO:
 	 * Make nodes to actual song
-	 * remove deployed when they fall off screen***
 	 * make scoring system based on hits and misses
 	 * make UI throb to the beat
 	 **/
@@ -16,15 +15,19 @@ public class RhythmInputMgmt : MonoBehaviour {
 	public GameObject LeftCircle;
 	public GameObject DownCircle;
 
-	public int Difficulty;
+	public float Difficulty;
+	public float BASE_F; //for scoring
 
 	private float time;
+
+	long score;
+	public GameObject textField;
 
 	/// <summary>
 	/// Start this instance.
 	/// </summary>
 	void Start () {
-	
+		score = 0;
 	}
 
 	/// <summary>
@@ -39,72 +42,70 @@ public class RhythmInputMgmt : MonoBehaviour {
 		time += Time.deltaTime;
 
 		if(Input.GetButtonDown("Up")){
-			//Debug.Log("Pressed Up");
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
 				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(UpCircle.transform.position)), Difficulty)) {
 					//hit
+					IncrementScore((int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f)));
 					hit = EmitAndDestroy (obj);
 					break;
 				}
 			}
 			if (!hit) {
-				//swing and a miss!
+				IncrementScore ((int)((-1.00 * (BASE_F / 2.0f) * Mathf.Sqrt (Mathf.Sqrt (time))) * Random.Range (1.0f, 2.0f)));
 			}
 		}
 
 		if(Input.GetButtonDown("Right")){
-			//Debug.Log("Pressed Right");
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
 				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(RightCircle.transform.position)), Difficulty)) {
 					//hit
+					IncrementScore((int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f)));
 					hit = EmitAndDestroy (obj);
 					break;
 				}
 			}
 			if (!hit) {
-				//swing and a miss!
+				IncrementScore ((int)((-1.00 * (BASE_F / 2.0f) * Mathf.Sqrt (Mathf.Sqrt (time))) * Random.Range (1.0f, 2.0f)));
 			}
 		}
 
 		if(Input.GetButtonDown("Down")){
-			//Debug.Log("Pressed Down");
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
 				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(DownCircle.transform.position)), Difficulty)) {
 					//hit
+					IncrementScore((int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f)));
 					hit = EmitAndDestroy (obj);
 					break;
 				}
 			}
 			if (!hit) {
-				//swing and a miss!
+				IncrementScore ((int)((-1.00 * (BASE_F / 2.0f) * Mathf.Sqrt (Mathf.Sqrt (time))) * Random.Range (1.0f, 2.0f)));
 			}
 		}
 
 		if(Input.GetButtonDown("Left")){
-			//Debug.Log("Pressed Left");
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
 				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(LeftCircle.transform.position)), Difficulty)) {
 					//hit
+					IncrementScore((int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f)));
 					hit = EmitAndDestroy (obj);
 					break;
 				}
 			}
 			if (!hit) {
-				//swing and a miss!
+				IncrementScore((int)((-1.00 * (BASE_F/2.0f) * Mathf.Sqrt(Mathf.Sqrt(time))) * Random.Range(1.0f, 2.0f)));
 			}
 		}
 
 		foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
-			//Debug.Log (StaticMethods.AlmostEquals (obj.GetComponent<LiveAndBreathe> ().getStartTime (), this.time, 1.0f));
-			//Debug.Log ("ST: "+ obj.GetComponent<LiveAndBreathe> ().getStartTime ().ToString());
-			//Debug.Log ("Time: " + this.time.ToString());
 			if (!obj.GetComponent<SpriteRenderer> ().isVisible 
 				&& !StaticMethods.AlmostEquals(obj.GetComponent<LiveAndBreathe>().getStartTime(), this.time, 1.0f)) {
 				//swing and a miss!
+				IncrementScore((int)(-1.00 * (int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f))));
 				DestroyPlz(obj);
 				break;
 			}
@@ -120,5 +121,10 @@ public class RhythmInputMgmt : MonoBehaviour {
 	private bool DestroyPlz(GameObject obj){
 		Object.Destroy (obj, 2.0f);
 		return gameObject.GetComponent<RhythmController> ().getDeployed ().Remove (obj);
+	}
+
+	private void IncrementScore(int incr){
+		score += incr;
+		textField.GetComponent<Text>().text = ("Score: " + score.ToString());
 	}
 }

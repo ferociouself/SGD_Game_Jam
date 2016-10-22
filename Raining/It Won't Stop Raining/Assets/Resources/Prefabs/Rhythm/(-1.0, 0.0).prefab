@@ -23,6 +23,7 @@ GameObject:
   - 50: {fileID: 50000013778099206}
   - 199: {fileID: 199000013870016600}
   - 198: {fileID: 198000010447690576}
+  - 114: {fileID: 114000010201956642}
   m_Layer: 0
   m_Name: (-1.0, 0.0)
   m_TagString: Untagged
@@ -60,6 +61,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &114000010201956642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012684470272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc892275939a148ada946dd7d7777dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198000010447690576
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -108,13 +120,13 @@ ParticleSystem:
   looping: 0
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   scalingMode: 1
   InitialModule:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 0.7
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -560,7 +572,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 1
+    m_BurstCount: 0
   SizeModule:
     enabled: 0
     curve:

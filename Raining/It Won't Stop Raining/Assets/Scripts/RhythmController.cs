@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Collections;
 
+
 public class RhythmController : MonoBehaviour {
 
-
-	Node[] master = {new Node (2.00f, 1.00f, Vector2.up), 
-		new Node (3.00f, 1.00f, Vector2.left), 
-		new Node (4.00f, 2.00f, Vector2.right), 
-		new Node (6.00f, 1.00f, Vector2.down)};
+	public float SPEED_H = 1.0f;
+	float SPEED_V;
+	
 	List<Node> mArr;
     List<GameObject> mDeployed;
 	int mIndex;
@@ -16,11 +15,18 @@ public class RhythmController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		SPEED_V = 144.0f/189.0f * SPEED_H;
+
 		mArr = new List<Node>();
-		mArr.AddRange (master);
+		mArr.Add(new Node (2.00f, SPEED_V, Vector2.up));
+		mArr.Add(new Node (3.00f, SPEED_H, Vector2.left));
+		mArr.Add(new Node (4.00f, SPEED_H, Vector2.right));
+		mArr.Add(new Node (6.00f, SPEED_V, Vector2.down));
+
 		mIndex = 0;
 		mTime = 0.00f;
 		mDeployed = new List<GameObject> ();
+
 	}
 
 	// Update is called once per frame
@@ -30,7 +36,7 @@ public class RhythmController : MonoBehaviour {
 		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 0.50f * Time.deltaTime);
 		if (res) {
 			deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
-			if(mIndex < master.Length - 1){ 
+			if(mIndex < mArr.Count - 1){ 
 				mIndex++; 
 			}
 		}

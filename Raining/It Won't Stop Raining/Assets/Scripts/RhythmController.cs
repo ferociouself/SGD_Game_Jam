@@ -4,14 +4,21 @@ using System.Collections;
 
 public class RhythmController : MonoBehaviour {
 
-	Node[] master = { new Node (2.00f, 1.00f, Vector2.up) };
-	Node[] mArr;
+
+	Node[] master = {new Node (2.00f, 1.00f, Vector2.up), 
+		new Node (3.00f, 1.00f, Vector2.left), 
+		new Node (4.00f, 1.00f, Vector2.right), 
+		new Node (6.00f, 1.00f, Vector2.down)};
+	List<Node> mArr;
 	List<GameObject> mDeployed;
+	int mIndex;
 	float mTime;
 
 	// Use this for initialization
 	void Start () {
-		mArr = master;
+		mArr = new List<Node>();
+		mArr.AddRange (master);
+		mIndex = 0;
 		mTime = 0.00f;
 		mDeployed = new List<GameObject> ();
 	}
@@ -19,23 +26,34 @@ public class RhythmController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		mTime += Time.deltaTime;
-		Node next = mArr [0];
-		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 1.5f * Time.deltaTime);
+		Node next = mArr [mIndex];
+		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 0.50f * Time.deltaTime);
 		if (res) {
 			Debug.Log ("I have found your arrow, boi!");
 			deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
+			if(mIndex < master.Length - 1){ 
+				mIndex++; 
+			}
 		}
 	}
 
+	/// <summary>
+	/// Deploies the arrow as necessary.
+	/// </summary>
+	/// <param name="speed">Speed.</param>
+	/// <param name="direction">Direction.</param>
 	private void deployArrow(float speed, Vector2 direction){
-		string name = "Rhythm/" + direction.ToString();
-		GameObject go = (GameObject)(Resources.Load("Prefabs/" + name, typeof(GameObject)));
-		Rigidbody2D rb = go.GetComponent<Rigidbody2D> ();
-		rb.transform.position =  Camera.main.ScreenToWorldPoint(this.gameObject.transform.position);
-		rb.transform.position = Vector3();
-		rb.velocity = direction * speed;
+		string path = "Prefabs/Rhythm/" + direction.ToString();
+		GameObject go = (GameObject)(Resources.Load(path, typeof(GameObject)));
+		go.transform.position =  Camera.main.ScreenToWorldPoint(this.gameObject.transform.position);
+		go.transform.position = StaticMethods.SetZOf(go.transform.position, 0.00f);
 		mDeployed.Add (go);
-		GameObject.Instantiate (go);
+		GameObject boi = GameObject.Instantiate (go);
+		boi.GetComponent<Rigidbody2D> ().velocity = direction * speed;
+	}
+
+	public List<GameObject> getDeployed(){
+		return mDeployed;
 	}
 }
 

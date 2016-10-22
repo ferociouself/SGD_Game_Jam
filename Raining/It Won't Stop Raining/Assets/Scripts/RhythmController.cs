@@ -23,21 +23,10 @@ public class RhythmController : MonoBehaviour {
 		if (res) {
 			//fire the next boi, send it on its way, add it to deployed, remove it from mArr
 		}
-
-		Debug.Log (Vector2.up.ToString ());
 	}
 
 	private void deployArrow(float speed, Vector2 direction){
-		string name = "Rhythm/";
-		if (direction.Equals(Vector2.up)){
-			name += "UA";
-		} else if (direction.Equals(Vector2.right)){
-			name += "RA";
-		} else if (direction.Equals(Vector2.left)){
-			name += "LA";
-		} else {
-			name += "DA";
-		}
+		string name = "Rhythm/" + direction.ToString();
 		GameObject go = (GameObject)(Resources.Load("Prefabs/" + name, typeof(GameObject)));
 		go.GetComponent<Rigidbody2D> ().transform.position = this.gameObject.transform.position;
 		go.GetComponent<Rigidbody2D> ().velocity = direction * speed;

@@ -21,18 +21,20 @@ public class PlayerController : MonoBehaviour {
 		if (holdDelay >= 0) {
 			holdDelay -= Time.deltaTime;
 		}
-		if (Input.GetAxis ("Vertical") > 0 && rb.velocity.y == 0) {
+		if (Input.GetButtonDown("Up") && StaticMethods.AlmostEquals(rb.velocity.y,0,0.01f)) {
 			rb.velocity = new Vector2(rb.velocity.x,10);
 		}
-		rb.velocity = new Vector2(Input.GetAxis("Horizontal")*3,rb.velocity.y);
-		if (Input.GetAxis ("Horizontal") > 0) {
+		if (Input.GetButton ("Right")) {
+			rb.velocity = new Vector2 (3, rb.velocity.y);
 			direction = 1;
-		} else if (Input.GetAxis ("Horizontal") < 0) {
+		} else if (Input.GetButton ("Left")) {
+			rb.velocity = new Vector2 (-3, rb.velocity.y);
 			direction = -1;
+		} else {
+			rb.velocity = new Vector2 (rb.velocity.x * 0.8f, rb.velocity.y);
 		}
-		if (Input.GetAxis ("Vertical") < 0 && holdDelay <= 0) {
+		if (Input.GetButton("Down") && holdDelay <= 0) {
 			if (!hold) {
-				
 				RaycastHit2D[] objectsInFront = Physics2D.RaycastAll (gameObject.transform.position, new Vector2(direction,0), 0.5f);
 				for (int i = 0; i < objectsInFront.Length; i++) {
 					if (objectsInFront [i].collider.tag == "Movable") {

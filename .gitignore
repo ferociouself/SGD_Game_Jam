@@ -28,31 +28,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-# =============== #
-# Unity generated #
-# =============== #
-Kin/[Tt]emp/*
-Kin/[Oo]bj/*
-Kin/[Bb]uild/*
-Kin/[Ll]ibrary/*
-sysinfo.txt
-*.stackdump
- 
-# ============================================= #
-# Visual Studio / MonoDevelop / Rider generated #
-# ============================================= #
-[Ee]xported[Oo]bj/
-.vs/
-/*.userprefs
-/*.csproj
-/*.pidb
-/*.suo
-/*.sln*
-/*.user
-/*.unityproj
-/*.booproj
-/.idea*/
  
 # ============ #
 # OS generated #
@@ -64,5 +39,3 @@ sysinfo.txt
 ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
-
-Kin/Assembly-CSharp.csproj

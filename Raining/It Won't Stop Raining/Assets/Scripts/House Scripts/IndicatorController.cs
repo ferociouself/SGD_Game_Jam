@@ -14,7 +14,6 @@ public class IndicatorController : MonoBehaviour {
 			Debug.LogError("Indicator named " + gameObject.name +  " has null activate object!");
 		}
 		sprite = gameObject.GetComponent<SpriteRenderer>();
-		activateObject.GetComponent<ActivateController>().player = player;
 	}
 	
 	// Update is called once per frame

@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetAxis ("Vertical") > 0 && rb.velocity.y == 0) {
-			rb.velocity = new Vector2(rb.velocity.x,6);
+			rb.velocity = new Vector2(rb.velocity.x,5);
 		}
-		rb.velocity = new Vector2(Input.GetAxis("Horizontal")*5,rb.velocity.y);
+		rb.velocity = new Vector2(Input.GetAxis("Horizontal")*4,rb.velocity.y);
 	}
 }

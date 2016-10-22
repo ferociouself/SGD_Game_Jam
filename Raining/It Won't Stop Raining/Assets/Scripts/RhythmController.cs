@@ -7,7 +7,7 @@ public class RhythmController : MonoBehaviour {
 
 	Node[] master = {new Node (2.00f, 1.00f, Vector2.up), 
 		new Node (3.00f, 1.00f, Vector2.left), 
-		new Node (4.00f, 1.00f, Vector2.right), 
+		new Node (4.00f, 2.00f, Vector2.right), 
 		new Node (6.00f, 1.00f, Vector2.down)};
 	List<Node> mArr;
     List<GameObject> mDeployed;
@@ -29,7 +29,6 @@ public class RhythmController : MonoBehaviour {
 		Node next = mArr [mIndex];
 		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 0.50f * Time.deltaTime);
 		if (res) {
-			Debug.Log ("I have found your arrow, boi!");
 			deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
 			if(mIndex < master.Length - 1){ 
 				mIndex++; 

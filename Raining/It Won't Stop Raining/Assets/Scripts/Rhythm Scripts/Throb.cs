@@ -21,6 +21,6 @@ public class Throb : MonoBehaviour {
 	}
 
 	private void ThrobMe(){
-		Mathf.Lerp(
+		//Mathf.Lerp(
 	}
 }

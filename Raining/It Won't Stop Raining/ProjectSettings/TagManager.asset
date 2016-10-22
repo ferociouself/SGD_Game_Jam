@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3738778707
+    locked: 0
+  - name: Interactables
+    uniqueID: 2684098947
+    locked: 0
+  - name: Player
+    uniqueID: 653063109
+    locked: 0

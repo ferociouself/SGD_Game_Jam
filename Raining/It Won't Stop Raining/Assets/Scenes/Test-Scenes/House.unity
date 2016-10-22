@@ -654,7 +654,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1 &613355657 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011552852964, guid: cab08a9176bc54313abeede4f2b1eb2b,
@@ -1767,6 +1767,15 @@ Prefab:
       propertyPath: activateObject
       value: 
       objectReference: {fileID: 348688482}
+    - target: {fileID: 1000010108866760, guid: 49e377c34797244cd8da425defc9954c, type: 2}
+      propertyPath: m_Name
+      value: Toy Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011608112080, guid: 49e377c34797244cd8da425defc9954c,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 891554435}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49e377c34797244cd8da425defc9954c, type: 2}
   m_IsPrefabParent: 0

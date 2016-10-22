@@ -52,4 +52,34 @@ public class StaticMethods {
 	public static bool AlmostEquals(Vector3 p1, Vector3 p2, float threshold) {
 		return Distance(p1, p2) < threshold;
 	}
+
+	/// <summary>
+	/// Sets the z of a Vector3.
+	/// </summary>
+	/// <returns>The z.</returns>
+	/// <param name="vector3">Vector3.</param>
+	/// <param name="z">The z coordinate.</param>
+	public static Vector3 SetZOf(Vector3 vector3, float z) {
+		return new Vector3 (vector3.x, vector3.y, z);
+	}
+
+	/// <summary>
+	/// Sets the y of a Vector3.
+	/// </summary>
+	/// <returns>The y.</returns>
+	/// <param name="vector3">Vector3.</param>
+	/// <param name="y">The y coordinate.</param>
+	public static Vector3 SetYOf(Vector3 vector3, float y) {
+		return new Vector3 (vector3.x, y, vector3.z);
+	}
+
+	/// <summary>
+	/// Sets the x of a Vector3.
+	/// </summary>
+	/// <returns>The x.</returns>
+	/// <param name="vector3">Vector3.</param>
+	/// <param name="x">The x coordinate.</param>
+	public static Vector3 SetXOf(Vector3 vector3, float x) {
+		return new Vector3 (x, vector3.y, vector3.z);
+	}
 }

@@ -10,7 +10,7 @@ public class InteractableController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		indicator.GetComponent<IndicatorController>().player = player;
 	}
 	
 	// Update is called once per frame

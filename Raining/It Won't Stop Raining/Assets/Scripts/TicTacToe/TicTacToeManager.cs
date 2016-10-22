@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TicTacToeManager : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class TicTacToeManager : MonoBehaviour {
 
 	bool playerTurn;
 	float turnDelay;
+	public float turnDelayTime;
 
 	// Use this for initialization
 	void Start () {
@@ -32,9 +34,9 @@ public class TicTacToeManager : MonoBehaviour {
 	void Update () {
 		if (!playerTurn) {
 			if (turnDelay <= 0) {
-
+				makeComputerMove ();
 			} else {
-
+				turnDelay -= Time.deltaTime;
 			}
 		}
 	}
@@ -44,10 +46,150 @@ public class TicTacToeManager : MonoBehaviour {
 			t.state = 1;
 			t.GetComponent<SpriteRenderer> ().sprite = t.xImage;
 			playerTurn = false;
-			turnDelay = 1f;
+			turnDelay = turnDelayTime;
 		}
 		if (isEndOfGame ()) {
 			Debug.Log ("END");
 		}
+	}
+
+	void makeComputerMove(){
+		//(0,0)
+		if (tiles [0] [0].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [1].GetComponent<TicTacTile> ().state == 1 && tiles [0] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 0);
+				return;
+			}
+			if (tiles [1] [1].GetComponent<TicTacTile> ().state == 1 && tiles [2] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 0);
+				return;
+			}
+			if (tiles [1] [0].GetComponent<TicTacTile> ().state == 1 && tiles [2] [0].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 0);
+				return;
+			}
+		}
+		if (tiles [0] [1].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [0].GetComponent<TicTacTile> ().state == 1 && tiles [0] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 1);
+				return;
+			}
+			if (tiles [1] [1].GetComponent<TicTacTile> ().state == 1 && tiles [2] [1].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 1);
+				return;
+			}
+		}
+		if (tiles [0] [2].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [1].GetComponent<TicTacTile> ().state == 1 && tiles [0] [0].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 2);
+				return;
+			}
+			if (tiles [1] [1].GetComponent<TicTacTile> ().state == 1 && tiles [2] [0].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 2);
+				return;
+			}
+			if (tiles [1] [2].GetComponent<TicTacTile> ().state == 1 && tiles [2] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (0, 2);
+				return;
+			}
+		}
+		if (tiles [1] [0].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [0].GetComponent<TicTacTile> ().state == 1 && tiles [2] [0].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 0);
+				return;
+			}
+			if (tiles [1] [1].GetComponent<TicTacTile> ().state == 1 && tiles [1] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 0);
+				return;
+			}
+		}
+		if (tiles [1] [1].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [0].GetComponent<TicTacTile> ().state == 1 && tiles [2] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 1);
+				return;
+			}
+			if (tiles [0] [1].GetComponent<TicTacTile> ().state == 1 && tiles [2] [1].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 1);
+				return;
+			}
+			if (tiles [0] [2].GetComponent<TicTacTile> ().state == 1 && tiles [2] [0].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 1);
+				return;
+			}
+			if (tiles [1] [0].GetComponent<TicTacTile> ().state == 1 && tiles [1] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 1);
+				return;
+			}
+		}
+		if (tiles [1] [2].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [2].GetComponent<TicTacTile> ().state == 1 && tiles [2] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 2);
+				return;
+			}
+			if (tiles [1] [1].GetComponent<TicTacTile> ().state == 1 && tiles [1] [0].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (1, 2);
+				return;
+			}
+		}
+		if (tiles [2] [0].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [0].GetComponent<TicTacTile> ().state == 1 && tiles [1] [0].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 0);
+				return;
+			}
+			if (tiles [0] [2].GetComponent<TicTacTile> ().state == 1 && tiles [1] [1].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 0);
+				return;
+			}
+			if (tiles [2] [2].GetComponent<TicTacTile> ().state == 1 && tiles [2] [1].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 0);
+				return;
+			}
+		}
+		if (tiles [2] [1].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [2] [0].GetComponent<TicTacTile> ().state == 1 && tiles [2] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 1);
+				return;
+			}
+			if (tiles [0] [1].GetComponent<TicTacTile> ().state == 1 && tiles [1] [1].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 1);
+				return;
+			}
+		}
+		if (tiles [2] [2].GetComponent<TicTacTile> ().state == 0) {
+			if (tiles [0] [0].GetComponent<TicTacTile> ().state == 1 && tiles [1] [1].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 2);
+				return;
+			}if (tiles [0] [2].GetComponent<TicTacTile> ().state == 1 && tiles [1] [2].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 2);
+				return;
+			}if (tiles [2] [0].GetComponent<TicTacTile> ().state == 1 && tiles [2] [1].GetComponent<TicTacTile> ().state == 1) {
+				compPlay (2, 2);
+				return;
+			}
+		}
+
+	}
+
+	bool isEndOfGame(){
+		for (int j = 0; j < 3; j++) {
+			if ((tiles [0] [j].GetComponent<TicTacTile> ().state == 1 || tiles [0] [j].GetComponent<TicTacTile> ().state == 2) && tiles [0] [j].GetComponent<TicTacTile> ().state == tiles [1] [j].GetComponent<TicTacTile> ().state && tiles [0] [j].GetComponent<TicTacTile> ().state == tiles [2] [j].GetComponent<TicTacTile> ().state) {
+				return true;
+			}
+			if ((tiles [j] [0].GetComponent<TicTacTile> ().state == 1 || tiles [j] [0].GetComponent<TicTacTile> ().state == 2) && tiles [j] [0].GetComponent<TicTacTile> ().state == tiles [j] [1].GetComponent<TicTacTile> ().state && tiles [j] [0].GetComponent<TicTacTile> ().state == tiles [j] [2].GetComponent<TicTacTile> ().state) {
+				return true;
+			}
+		}
+		if ((tiles [0] [0].GetComponent<TicTacTile> ().state == 1 || tiles [0] [0].GetComponent<TicTacTile> ().state == 2) && tiles [0] [0].GetComponent<TicTacTile> ().state == tiles [1] [1].GetComponent<TicTacTile> ().state && tiles [0] [0].GetComponent<TicTacTile> ().state == tiles [2] [2].GetComponent<TicTacTile> ().state) {
+			return true;
+		}
+		if ((tiles [2] [0].GetComponent<TicTacTile> ().state == 1 || tiles [2] [0].GetComponent<TicTacTile> ().state == 2) && tiles [2] [0].GetComponent<TicTacTile> ().state == tiles [1] [1].GetComponent<TicTacTile> ().state && tiles [2] [0].GetComponent<TicTacTile> ().state == tiles [0] [2].GetComponent<TicTacTile> ().state) {
+			return true;
+		}
+		return false;
+	}
+
+	void compPlay(int x,int y){
+		tiles [x] [y].GetComponent<SpriteRenderer> ().sprite = tiles [x] [y].GetComponent<TicTacTile> ().oImage;
+		tiles [x] [y].GetComponent<TicTacTile> ().state = 2;
 	}
 }

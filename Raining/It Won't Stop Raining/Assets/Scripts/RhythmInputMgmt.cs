@@ -37,7 +37,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 			//Debug.Log("Pressed Right");
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
-				if (StaticMethods.AlmostEquals(obj.transform.position, Camera.main.ScreenToWorldPoint(RightCircle.transform.position), Difficulty)) {
+				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(RightCircle.transform.position)), Difficulty)) {
 					//hit
 					break;
 				}
@@ -51,7 +51,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 			//Debug.Log("Pressed Down");
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
-				if (StaticMethods.AlmostEquals(obj.transform.position, Camera.main.ScreenToWorldPoint(DownCircle.transform.position), Difficulty)) {
+				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(DownCircle.transform.position)), Difficulty)) {
 					//hit
 					break;
 				}
@@ -65,7 +65,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 			//Debug.Log("Pressed Left");
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
-				if (StaticMethods.AlmostEquals(obj.transform.position, Camera.main.ScreenToWorldPoint(LeftCircle.transform.position), Difficulty)) {
+				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(LeftCircle.transform.position)), Difficulty)) {
 					//hit
 					break;
 				}

@@ -759,6 +759,7 @@ GameObject:
   - 222: {fileID: 1666456357}
   - 114: {fileID: 1666456356}
   - 114: {fileID: 1666456355}
+  - 114: {fileID: 1666456358}
   m_Layer: 5
   m_Name: ScriptCtrl
   m_TagString: Untagged
@@ -828,6 +829,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1666456353}
+--- !u!114 &1666456358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666456353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0fa265a803e4c09a56247726bdb55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpCircle: {fileID: 600912533}
+  RightCircle: {fileID: 1895485579}
+  LeftCircle: {fileID: 762614037}
+  DownCircle: {fileID: 665627228}
+  Difficulty: 3
 --- !u!1 &1895485579
 GameObject:
   m_ObjectHideFlags: 0

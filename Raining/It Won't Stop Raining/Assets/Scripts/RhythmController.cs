@@ -10,7 +10,7 @@ public class RhythmController : MonoBehaviour {
 		new Node (4.00f, 1.00f, Vector2.right), 
 		new Node (6.00f, 1.00f, Vector2.down)};
 	List<Node> mArr;
-	List<GameObject> mDeployed;
+    List<GameObject> mDeployed;
 	int mIndex;
 	float mTime;
 
@@ -47,9 +47,9 @@ public class RhythmController : MonoBehaviour {
 		GameObject go = (GameObject)(Resources.Load(path, typeof(GameObject)));
 		go.transform.position =  Camera.main.ScreenToWorldPoint(this.gameObject.transform.position);
 		go.transform.position = StaticMethods.SetZOf(go.transform.position, 0.00f);
-		mDeployed.Add (go);
 		GameObject boi = GameObject.Instantiate (go);
 		boi.GetComponent<Rigidbody2D> ().velocity = direction * speed;
+		mDeployed.Add (boi);
 	}
 
 	public List<GameObject> getDeployed(){

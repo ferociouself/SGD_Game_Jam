@@ -844,7 +844,7 @@ MonoBehaviour:
   RightCircle: {fileID: 1895485579}
   LeftCircle: {fileID: 762614037}
   DownCircle: {fileID: 665627228}
-  Difficulty: 3
+  Difficulty: 1
 --- !u!1 &1895485579
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,14 @@ using System.Collections;
 
 public class RhythmInputMgmt : MonoBehaviour {
 
+	/**TODO:
+	 * Make nodes to actual song
+	 * remove deployed upon hit
+	 * remove deployed when they fall off screen***
+	 * make scoring system based on hits and misses
+	 * make UI throb to the beat
+	 **/
+
 	public GameObject UpCircle;
 	public GameObject RightCircle;
 	public GameObject LeftCircle;

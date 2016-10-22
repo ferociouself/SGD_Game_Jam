@@ -17,7 +17,7 @@ public class PlayerInventoryController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		Debug.Log(inventory[InteractableController.ActivateType.ITEM_HAMMER]);
 	}
 
 	public bool setInventoryActive(InteractableController.ActivateType item) {
@@ -25,6 +25,10 @@ public class PlayerInventoryController : MonoBehaviour {
 			return false;
 		}
 		inventory[item] = true;
+		return inventory[item];
+	}
+
+	public bool isInInventory(InteractableController.ActivateType item) {
 		return inventory[item];
 	}
 }

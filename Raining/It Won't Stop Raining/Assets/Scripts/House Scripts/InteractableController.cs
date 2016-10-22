@@ -11,14 +11,25 @@ public class InteractableController : MonoBehaviour {
 	public float range;
 
 	public enum ActivateType {
-		TestGame,
-		TestGame2,
-		TestGame3,
-		ITEM_HAMMER
+		HackAndSlash,
+		TowerDefense,
+		PuzzlePlatformer,
+		HideAndSeek,
+		Rhythm,
+		Racing,
+		OperationMaze,
+		ITEM_TREAT,
+		ITEM_DRUMSTICKS,
+		ITEM_TOYSWORD,
+		ITEM_MODELBOAT,
+		ITEM_SHOES,
+		ITEM_ARMYFIGURES,
+		ITEM_HAMMER,
+		ITEM_LASERPOINTER
 	};
 
-	public const int ITEM_START = 3;
-	public const int ACTIVATE_LENGTH = 4;
+	public const int ITEM_START = 7;
+	public const int ACTIVATE_LENGTH = 14;
 
 	public ActivateType type;
 

@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			rb.velocity = new Vector2 (rb.velocity.x * 0.8f, rb.velocity.y);
 		}
-		if (Input.GetButton("Down") && holdDelay <= 0) {
+		if (Input.GetButtonDown("Down") && holdDelay <= 0) {
 			if (!hold) {
 				RaycastHit2D[] objectsInFront = Physics2D.RaycastAll (gameObject.transform.position, new Vector2(direction,0), 0.5f);
 				for (int i = 0; i < objectsInFront.Length; i++) {
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour {
 						objectsInFront [i].collider.gameObject.SetActive(false);
 						heldObject = objectsInFront [i].collider.gameObject;
 						gameObject.GetComponent<SpriteRenderer> ().sprite = holding;
-						holdDelay = 1;
+						//holdDelay = 0.5f;
 					}
 				}
 			} else {
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 				heldObject.SetActive (true);
 				hold = false;
 				gameObject.GetComponent<SpriteRenderer> ().sprite = empty;
-				holdDelay = 1;
+				//holdDelay = 0.5f;
 			}
 		}
 	}

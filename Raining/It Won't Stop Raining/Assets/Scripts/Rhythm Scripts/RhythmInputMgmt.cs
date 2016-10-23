@@ -15,6 +15,8 @@ public class RhythmInputMgmt : MonoBehaviour {
 	public GameObject LeftCircle;
 	public GameObject DownCircle;
 
+	Vector2 screenInWorld = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+
 	public float Difficulty;
 	public float BASE_F; //for scoring
 
@@ -102,10 +104,10 @@ public class RhythmInputMgmt : MonoBehaviour {
 		}
 
 		foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
-			if (!obj.GetComponent<SpriteRenderer> ().isVisible 
-				&& !StaticMethods.AlmostEquals(obj.GetComponent<LiveAndBreathe>().getStartTime(), this.time, 1.0f)) {
+			if (!(obj.GetComponent<SpriteRenderer>().isVisible)
+				&& obj.GetComponent<LiveAndBreathe>().getStartTime() < this.time + 3) {
 				//swing and a miss!
-				IncrementScore((int)(-1.00 * (int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f))));
+				//IncrementScore((int)(-1.00 * (int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f))));
 				DestroyPlz(obj);
 				break;
 			}
@@ -120,7 +122,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 
 	private bool DestroyPlz(GameObject obj){
 		Object.Destroy (obj, 2.0f);
-		return gameObject.GetComponent<RhythmController> ().getDeployed ().Remove (obj);
+		return gameObject.GetComponent<RhythmController> ().getDeployed ().Remove(obj);
 	}
 
 	private void IncrementScore(int incr){

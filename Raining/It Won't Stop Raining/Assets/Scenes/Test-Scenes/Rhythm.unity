@@ -980,6 +980,11 @@ Prefab:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95000012365286360, guid: f050e18595a7f8e428d6cf0f4f747e19,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ea753788b177f4853a0c78038b459d3b, type: 2}
     m_RemovedComponents:
     - {fileID: 50000013259630018, guid: f050e18595a7f8e428d6cf0f4f747e19, type: 2}
     - {fileID: 114000013106961696, guid: f050e18595a7f8e428d6cf0f4f747e19, type: 2}

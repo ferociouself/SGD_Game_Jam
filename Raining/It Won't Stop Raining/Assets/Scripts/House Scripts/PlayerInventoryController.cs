@@ -27,6 +27,7 @@ public class PlayerInventoryController : MonoBehaviour {
 			//activate them
 			if (inventory [key]) {
 				ui.ActivateIcon (key);
+				ui.DeactivateItem(key);
 			}
 		}
 	}

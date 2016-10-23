@@ -1043,7 +1043,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 923ec57e761b8454196ba0fd10b2d278, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f701dfa3dfbd03a429f45a0b314f1868, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2348,7 +2348,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f701dfa3dfbd03a429f45a0b314f1868, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 923ec57e761b8454196ba0fd10b2d278, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2554,7 +2554,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: add94f4c773678c45b18c1c22299fbad, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &623115146
@@ -2832,7 +2833,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9bee0199eae0d434da9b76ba377e0aab, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &728006424
@@ -4895,7 +4897,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 78c7204d60ee33b40b1b6191d2a1bde4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1239688911
@@ -5056,8 +5059,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 1933476147}
   toggles:
-  - {fileID: 1759051999}
   - {fileID: 728502917}
+  - {fileID: 1759051999}
   - {fileID: 1292051346}
 --- !u!1 &1281418033
 GameObject:
@@ -7859,7 +7862,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114000010542470596, guid: 075758959e727d040935ba74bd2a1270, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 075758959e727d040935ba74bd2a1270, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1890164728
@@ -8284,8 +8288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 258733088}
   toggles:
-  - {fileID: 1759051999}
   - {fileID: 728502917}
+  - {fileID: 1759051999}
   - {fileID: 1292051346}
 --- !u!1 &2001615560
 GameObject:

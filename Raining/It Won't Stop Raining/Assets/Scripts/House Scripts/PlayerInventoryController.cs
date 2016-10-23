@@ -31,6 +31,7 @@ public class PlayerInventoryController : MonoBehaviour {
 			//activate them
 			if (inventory [key]) {
 				ui.ActivateIcon (key);
+				ui.DeactivateItem(key);
 			}
 		}
 	}
@@ -58,6 +59,7 @@ public class PlayerInventoryController : MonoBehaviour {
 		}
 		inventory[item] = true;
 		ui.ActivateIcon(item);
+
 		return inventory[item];
 	}
 

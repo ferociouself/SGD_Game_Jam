@@ -11,6 +11,7 @@ public class Mob : MonoBehaviour {
     public int health;
     public int damage;
     public float speed;
+    public float attackCooldown;
 
     protected Direction direction = Direction.Down;
     protected bool walking = false;

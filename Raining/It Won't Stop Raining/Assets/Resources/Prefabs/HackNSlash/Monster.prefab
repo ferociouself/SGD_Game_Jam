@@ -100,6 +100,7 @@ MonoBehaviour:
   health: 1
   damage: 1
   speed: 1
+  attackCooldown: 0.8
 --- !u!212 &212000013885347824
 SpriteRenderer:
   m_ObjectHideFlags: 1

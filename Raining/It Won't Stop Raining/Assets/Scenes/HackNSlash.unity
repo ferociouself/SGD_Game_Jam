@@ -264,11 +264,8 @@ MonoBehaviour:
   health: 5
   damage: 1
   speed: 2
+  attackCooldown: 0.5
   swordRange: 2
-  upSprite: {fileID: 21300000, guid: 782001e2cb4b60b4ead0f0d9f52b096e, type: 3}
-  downSprite: {fileID: 21300000, guid: ac7e9c658c8a06740b86518dfd06d014, type: 3}
-  leftSprite: {fileID: 21300000, guid: 1b6d311eab7e3f541ae8bfc7690aedb1, type: 3}
-  rightSprite: {fileID: 21300000, guid: e24f8fb7e52ac6e4493706f80e0dd8bc, type: 3}
 --- !u!95 &677708662
 Animator:
   serializedVersion: 3

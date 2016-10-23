@@ -11,60 +11,66 @@ public class Player : Mob {
 
     public float swordRange;
 
-    public Sprite upSprite, downSprite, leftSprite, rightSprite;
-
-    SpriteRenderer spriteRenderer;
+    //private bool canMove = true;
+    private float attackTimer = 0f;
 
     override protected void Start () {
         base.Start();
-        spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	override protected void Update () {
         Vector2 velocity = Vector2.zero;
         walking = false;
-        if (Input.GetKey(UPKEY))
+        if (attackTimer <= 0)
         {
-            velocity.y = 1;
-            direction = Direction.Up;
-            walking = true;
-            //spriteRenderer.sprite = upSprite;
-        }
-        else if (Input.GetKey(DOWNKEY))
-        {
-            velocity.y = -1;
-            direction = Direction.Down;
-            walking = true;
-            //spriteRenderer.sprite = downSprite;
-        }
-        if (Input.GetKey(LEFTKEY))
-        {
-            velocity.x = -1;
-            direction = Direction.Left;
-            walking = true;
-            //spriteRenderer.sprite = leftSprite;
-        }
-        else if (Input.GetKey(RIGHTKEY))
-        {
-            velocity.x = 1;
-            direction = Direction.Right;
-            walking = true;
-            //spriteRenderer.sprite = rightSprite;
+            if (Input.GetKey(UPKEY))
+            {
+                velocity.y = 1;
+                direction = Direction.Up;
+                walking = true;
+                //spriteRenderer.sprite = upSprite;
+            }
+            else if (Input.GetKey(DOWNKEY))
+            {
+                velocity.y = -1;
+                direction = Direction.Down;
+                walking = true;
+                //spriteRenderer.sprite = downSprite;
+            }
+            if (Input.GetKey(LEFTKEY))
+            {
+                velocity.x = -1;
+                direction = Direction.Left;
+                walking = true;
+                //spriteRenderer.sprite = leftSprite;
+            }
+            else if (Input.GetKey(RIGHTKEY))
+            {
+                velocity.x = 1;
+                direction = Direction.Right;
+                walking = true;
+                //spriteRenderer.sprite = rightSprite;
+            }
         }
         rigidBody.velocity = velocity.normalized * speed;
         animator.SetInteger("Direction", (int)direction);
         animator.SetBool("Walking", walking);
 
-        if (Input.GetKeyDown(ATTACKKEY))
+        if (attackTimer <= 0 && Input.GetKeyDown(ATTACKKEY))
         {
             Attack();
         }
+
+        if (attackTimer > 0)
+            attackTimer -= Time.deltaTime;
     }
 
     private void Attack()
     {
         print("Attack: " + name);
         animator.SetTrigger("Attack");
+        attackTimer = attackCooldown;
+        //canMove = false;
         Vector2 center, size;
         GetAttackRect(out center, out size);
         Collider2D[] collisions = Physics2D.OverlapBoxAll(center, size, 0f, LayerMask.GetMask("Monsters"));
@@ -75,6 +81,11 @@ public class Player : Mob {
             monster.Hit(damage);
         }
     }
+
+    //public void AttackEnd()
+    //{
+    //    canMove = true;
+    //}
 
     private void GetAttackRect(out Vector2 center, out Vector2 size)
     {

@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Player : Mob {
 
-    private const KeyCode UPKEY = KeyCode.W;
-    private const KeyCode DOWNKEY = KeyCode.S;
-    private const KeyCode LEFTKEY = KeyCode.A;
-    private const KeyCode RIGHTKEY = KeyCode.D;
+    //private const KeyCode UPKEY = KeyCode.W;
+    //private const KeyCode DOWNKEY = KeyCode.S;
+    //private const KeyCode LEFTKEY = KeyCode.A;
+    //private const KeyCode RIGHTKEY = KeyCode.D;
     private const KeyCode ATTACKKEY = KeyCode.J;
 
     public float swordRange = 0.5f;
@@ -16,12 +16,15 @@ public class Player : Mob {
     private float attackTimer = 0f;
     private float damageTimer = 0f;
 
+    private SpriteRenderer spriteRenderer;
+
     override protected void Start () {
         base.Start();
-	}
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
 	override protected void Update () {
-        if (attackTimer <= 0)
+        if (attackTimer == 0)
         {
             //float x = 0;
             //float y = 0;
@@ -35,15 +38,25 @@ public class Player : Mob {
             rigidBody.velocity = velocity = new Vector2(x, y).normalized * speed;
         }
 
-        if (attackTimer <= 0 && Input.GetKeyDown(ATTACKKEY))
+        if (attackTimer == 0)
         {
-            Attack();
+            if (Input.GetKeyDown(ATTACKKEY))
+                Attack();
+        }
+        else
+        {
+            attackTimer = Mathf.Max(attackTimer - Time.deltaTime, 0);
         }
 
-        if (attackTimer > 0)
-            attackTimer -= Time.deltaTime;
         if (damageTimer > 0)
-            damageTimer -= Time.deltaTime;
+        {
+            damageTimer = Mathf.Max(damageTimer - Time.deltaTime, 0);
+            spriteRenderer.color = Color.gray;
+        }
+        else
+        {
+            spriteRenderer.color = Color.white;
+        }
     }
 
     private void Attack()

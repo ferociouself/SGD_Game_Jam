@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -14,9 +15,8 @@ public class GameController : MonoBehaviour {
     private Monster[][] waves;
     private int wave = 0;
     private float waveTimer = 0f;
+    private bool won = false;
 
-
-    // Use this for initialization
     void Start() {
         player = GameObject.Find("Player");
         waves = new Monster[][]
@@ -28,7 +28,6 @@ public class GameController : MonoBehaviour {
         };
     }
 
-    // Update is called once per frame
     void Update() {
         if (waveTimer == 0)
         {
@@ -40,15 +39,19 @@ public class GameController : MonoBehaviour {
             }
             monstersLeft = waves[wave].Length;
             wave++;
-            if (wave == waves.Length)
-            {
-                print("You win!!1");
-            }
         }
-        else if (waveTimer == -1 && monstersLeft == 0 && wave < waves.Length)
+        else if (waveTimer == -1 && monstersLeft == 0)
         {
-            print("Start Countdown");
-            waveTimer = waveCooldown;
+            if (wave < waves.Length)
+            {
+                print("Start Countdown");
+                waveTimer = waveCooldown;
+            }
+            else if (!won)
+            {
+                print("Teh win!!1");
+                won = true;
+            }
         }
         else if (waveTimer > 0)
         {

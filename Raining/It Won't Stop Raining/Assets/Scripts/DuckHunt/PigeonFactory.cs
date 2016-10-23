@@ -10,6 +10,7 @@ public class PigeonFactory : MonoBehaviour {
 	float pigeonCooldown;
 	public Texture2D cursor;
 	public float TimeLimit;
+	public AudioSource hitSound;
 
 	// Use this for initialization
 	void Start () {
@@ -50,5 +51,6 @@ public class PigeonFactory : MonoBehaviour {
 		GameObject toSpawn = GameObject.Instantiate (nextSpawn);
 		toSpawn.GetComponent<Pigeon>().setXY(-1 * negativeX * (Random.value * 4 + 2),Random.value * 2 + 1);
 		toSpawn.GetComponent<Pigeon> ().ospeed = Random.value * 30 + 20;
+		toSpawn.GetComponent<Pigeon> ().hitsound = hitSound;
 	}
 }

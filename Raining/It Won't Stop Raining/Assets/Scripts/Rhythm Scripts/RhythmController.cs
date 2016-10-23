@@ -46,17 +46,17 @@ public class RhythmController : MonoBehaviour {
 
 		mArr.Add(new Node (GenBirthTime(14.200f), SPEED_H, Vector2.right));
 		mArr.Add(new Node (GenBirthTime(14.391f), SPEED_V, Vector2.down));
-		mArr.Add(new Node (GenBirthTime(14.856f), SPEED_V, Vector2.down));
-		mArr.Add(new Node (GenBirthTime(15.000f), SPEED_H, Vector2.left));
-		mArr.Add(new Node (GenBirthTime(15.300f), SPEED_H, Vector2.right));
-		mArr.Add(new Node (GenBirthTime(16.169f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(14.950f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(15.600f), SPEED_V, Vector2.down));
 		mArr.Add(new Node (GenBirthTime(15.950f), SPEED_H, Vector2.right));
-		mArr.Add(new Node (GenBirthTime(16.200f), SPEED_V, Vector2.down));
-		mArr.Add(new Node (GenBirthTime(16.590f), SPEED_V, Vector2.down));
-		mArr.Add(new Node (GenBirthTime(17.000f), SPEED_V, Vector2.down));
-		mArr.Add(new Node (GenBirthTime(17.275f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(16.250f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(16.600f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(17.100f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(17.400f), SPEED_H, Vector2.left));
 
 
+
+		//dummy node at the end
 
 		mIndex = 0;
 		mTime = 0.00f;
@@ -67,14 +67,15 @@ public class RhythmController : MonoBehaviour {
 	void Update () {
 		mTime += Time.deltaTime;
 		Node next = mArr [mIndex];
-		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 0.70f * Time.deltaTime);
-		if (res) {
-			deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
-			if(mIndex < mArr.Count - 1){ 
-				mIndex++; 
+		//bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 2.0f * Time.deltaTime);
+		if (mIndex < mArr.Count - 1){
+			if (mTime >= next.getTime()) {
+				deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
+				if(mIndex < mArr.Count - 1){ 
+					mIndex++; 
+				}
 			}
-			Debug.Log (mTime.ToString ());
-		}
+		}			
 	}
 
 	/// <summary>

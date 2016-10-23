@@ -9,7 +9,10 @@ public class SceneManager : MonoBehaviour {
 	UnityEngine.SceneManagement.SceneManager SM;
 
 	Dictionary<InteractableController.ActivateType, bool> inventory;
-	bool firstTime = true;
+	Vector2 playerpos;
+
+	bool waiter;
+	float timer;
 
 	/// <summary>
 	/// Awaken this instance.
@@ -27,22 +30,35 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 
-	void OnEnable(){
-		if (!firstTime) {
-			if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex == 0) {
-				if (GameObject.Find ("Jimbo") != null) {
-					GameObject Player = GameObject.Find ("Jimbo");
-					if (Player.GetComponent<PlayerInventoryController> () != null) {
-						Debug.Log ("You shouldn't be here, Harry.");
-						Player.GetComponent<PlayerInventoryController> ().setInventory (this.inventory);
-					}
-				}
-			}
-		}
-		firstTime = false;
+	public Dictionary<InteractableController.ActivateType, bool> getInventory(){
+		return inventory;
 	}
 
-	void Update () { }
+	public Vector2 getPlayerPos(){
+		return playerpos;
+	}
+
+	void Start() { 
+		inventory = new Dictionary<InteractableController.ActivateType, bool>();
+		for (int i = InteractableController.ITEM_START - 1; i < InteractableController.ACTIVATE_LENGTH; i++) {
+			inventory.Add((InteractableController.ActivateType)i, false);
+		}
+		playerpos = new Vector2(0,0); //where we start the
+	}
+
+	void OnEnable(){
+		waiter = true;
+		timer = 0.00f;
+	}
+
+	void Update () {		
+		if (waiter && timer >= 2.00f && UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex == 0) {
+			LoadHome ();
+			waiter = false;
+		} else {
+			timer += Time.deltaTime;
+		}
+	}
 
 
 	/// <summary>
@@ -51,23 +67,40 @@ public class SceneManager : MonoBehaviour {
 	/// <returns><c>true</c>, if to scene was moved, <c>false</c> otherwise.</returns>
 	/// <param name="sceneNumber">Scene number.</param>
 	public void MoveToScene(int sceneNumber) {
-		int index = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex;
-
-		if (index != 0) {
-			UnityEngine.SceneManagement.SceneManager.LoadSceneAsync (sceneNumber);
-		}
+		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync (sceneNumber);
 	}
 
-	public void MoveToScene(int sceneNumber, Dictionary<InteractableController.ActivateType, bool> inv) {
+	public void MoveToScene(int sceneNumber, Dictionary<InteractableController.ActivateType, bool> inv, Vector2 pos) {
 		int index = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex;
+
+		Debug.Log ("Index: " + index);
 
 		if (index == 0) {
-			SaveHome (inv);
+			SaveHome (inv, pos);
+			foreach(InteractableController.ActivateType key in inv.Keys){
+				//go through all objects in inventory that are active and
+				Debug.Log(key.ToString() + " " + inv[key].ToString());
+			}
+
 			UnityEngine.SceneManagement.SceneManager.LoadSceneAsync (sceneNumber);
 		}
 	}
 
-	private void SaveHome(Dictionary<InteractableController.ActivateType, bool> inv){
+	private void SaveHome(Dictionary<InteractableController.ActivateType, bool> inv, Vector2 pos){
 		this.inventory = inv;
+		this.playerpos = pos;
+	}
+
+	private void LoadHome(){
+		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex == 0) {
+			if (GameObject.Find ("Jimbo") != null) {
+				Debug.Log ("not null jimbo");
+				GameObject Player = GameObject.Find ("Jimbo");
+				if (Player.GetComponent<PlayerInventoryController> () != null) {
+					Debug.Log ("not null inventory");
+					Player.GetComponent<PlayerInventoryController> ().setInventory (this.inventory);
+				}
+			}
+		}
 	}
 }

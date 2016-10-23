@@ -260,9 +260,9 @@ public class RhythmController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		mTime += Time.deltaTime;
-		Node next = mArr [mIndex];
 		//bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 2.0f * Time.deltaTime);
 		if (mIndex < mArr.Count - 1) {
+			Node next = mArr [mIndex];
 			if (mTime >= next.getTime ()) {
 				deployArrow (next.getSpeed (), next.getDir ());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
 				if (mIndex < mArr.Count - 1) { 
@@ -275,7 +275,7 @@ public class RhythmController : MonoBehaviour {
 				if(delayTime >= 5.0){
 					Debug.Log ("I am done, Sir.");
 					SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
-					SM.MoveToScene (0); //THe ENd
+					SM.MoveToScene (0); //THe ENd				}
 				}
 			}
 		}

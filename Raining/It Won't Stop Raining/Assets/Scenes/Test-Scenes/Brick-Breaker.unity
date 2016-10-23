@@ -334,48 +334,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!1001 &1321262228
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012243386572, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 6ac5f512cac2846dba6f4097dd413be1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1595657608
 Prefab:
   m_ObjectHideFlags: 0

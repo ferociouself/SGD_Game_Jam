@@ -13,7 +13,7 @@ public class Clouds2 : MonoBehaviour {
 		start = transform.position;
 		total = 0;
 
-		width = sr.sprite.bounds.size.x * 5;
+		width = sr.sprite.bounds.size.x;
 	}
 
 	// Update is called once per frame

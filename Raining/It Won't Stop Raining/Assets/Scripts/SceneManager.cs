@@ -10,6 +10,7 @@ public class SceneManager : MonoBehaviour {
 
 	Dictionary<InteractableController.ActivateType, bool> inventory;
 	Vector2 playerpos;
+	float playerspeed;
 
 	bool waiter;
 	float timer;
@@ -96,6 +97,7 @@ public class SceneManager : MonoBehaviour {
 			if (GameObject.Find ("Jimbo") != null) {
 				Debug.Log ("not null jimbo");
 				GameObject Player = GameObject.Find ("Jimbo");
+				Player.GetComponent<PlayerMovement>().speed = 1.0f;
 				if (Player.GetComponent<PlayerInventoryController> () != null) {
 					Debug.Log ("not null inventory");
 					Player.GetComponent<PlayerInventoryController> ().setInventory (this.inventory);

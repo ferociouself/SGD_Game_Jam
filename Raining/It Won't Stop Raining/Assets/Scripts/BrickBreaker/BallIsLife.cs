@@ -6,6 +6,7 @@ public class BallIsLife : MonoBehaviour {
 	Rigidbody2D rb;
 	public float speed;
 	public float maxSpeed;
+	public AudioSource brick, bounce;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,11 @@ public class BallIsLife : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collider2D other){
-
+	void OnCollisionEnter2D(Collision2D other){
+		if (other.gameObject.tag == "Brick") {
+			brick.Play ();
+		} else {
+			bounce.Play ();
+		}
 	}
 }

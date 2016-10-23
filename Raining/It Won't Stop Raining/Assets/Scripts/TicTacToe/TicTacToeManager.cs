@@ -24,7 +24,7 @@ public class TicTacToeManager : MonoBehaviour {
 				tile.transform.position = pos + new Vector2 (i * scale,-1 * j * scale);
 				tile.transform.localScale = new Vector2 (scale,scale);
 				tiles[i][j] = GameObject.Instantiate (tile);
-				var ttt = tile.GetComponent<TicTacTile> ();
+				var ttt = tiles[i][j].GetComponent<TicTacTile> ();
 				ttt.x = i;
 				ttt.y = j;
 				ttt.parent = this;

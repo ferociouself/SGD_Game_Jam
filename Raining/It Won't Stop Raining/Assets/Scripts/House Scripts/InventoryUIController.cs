@@ -14,6 +14,6 @@ public class InventoryUIController : MonoBehaviour {
 	}
 
 	public void DeactivateItem(InteractableController.ActivateType type) {
-		itemIcons[(int)type - InteractableController.ITEM_START].GetComponent<ActivateController>().interactableObject.SetActive(false);
+		itemIcons[(int)type - InteractableController.ITEM_START].GetComponent<ItemTracker>().interactableObject.SetActive(false);
 	}
 }

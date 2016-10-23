@@ -9,6 +9,8 @@ public class TicTacToeManager : MonoBehaviour {
 	bool playerTurn;
 	float turnDelay;
 	public float turnDelayTime;
+	public float scale;
+	bool ended;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +20,9 @@ public class TicTacToeManager : MonoBehaviour {
 			tiles [i] = new GameObject[3];
 			for (int j = 0; j < tiles [i].Length; j++) {
 				GameObject tile = (GameObject)(Resources.Load ("Prefabs/TicTacToe/TicTacTile", typeof(GameObject)));
-				tile.transform.position = pos + new Vector2 (i,j);
-				GameObject.Instantiate (tile);
+				tile.transform.position = pos + new Vector2 (i * scale,-1 * j * scale);
+				tile.transform.localScale = new Vector2 (scale,scale);
+				tiles[i][j] = GameObject.Instantiate (tile);
 				var ttt = tile.GetComponent<TicTacTile> ();
 				ttt.x = i;
 				ttt.y = j;
@@ -28,11 +31,12 @@ public class TicTacToeManager : MonoBehaviour {
 		}
 		playerTurn = true;
 		turnDelay = 0;
+		ended = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!playerTurn) {
+		if (!playerTurn && !ended) {
 			if (turnDelay <= 0) {
 				makeComputerMove ();
 			} else {
@@ -48,8 +52,9 @@ public class TicTacToeManager : MonoBehaviour {
 			playerTurn = false;
 			turnDelay = turnDelayTime;
 		}
-		if (isEndOfGame ()) {
-			Debug.Log ("END");
+		if (playerTurn && isEndOfGame ()) {
+			Debug.Log ("You Won!");
+			ended = true;
 		}
 	}
 
@@ -167,7 +172,16 @@ public class TicTacToeManager : MonoBehaviour {
 				return;
 			}
 		}
-
+		List<int> playables = new List<int>();
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (tiles [i] [j].GetComponent<TicTacTile> ().state == 0) {
+					playables.Add (i * 3 + j);
+				}
+			}
+		}
+		int play = playables[Random.Range(0,playables.Count - 1)];
+		compPlay (play / 3, play % 3);
 	}
 
 	bool isEndOfGame(){
@@ -185,11 +199,24 @@ public class TicTacToeManager : MonoBehaviour {
 		if ((tiles [2] [0].GetComponent<TicTacTile> ().state == 1 || tiles [2] [0].GetComponent<TicTacTile> ().state == 2) && tiles [2] [0].GetComponent<TicTacTile> ().state == tiles [1] [1].GetComponent<TicTacTile> ().state && tiles [2] [0].GetComponent<TicTacTile> ().state == tiles [0] [2].GetComponent<TicTacTile> ().state) {
 			return true;
 		}
-		return false;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (tiles [i] [j].GetComponent<TicTacTile> ().state == 0) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	void compPlay(int x,int y){
 		tiles [x] [y].GetComponent<SpriteRenderer> ().sprite = tiles [x] [y].GetComponent<TicTacTile> ().oImage;
 		tiles [x] [y].GetComponent<TicTacTile> ().state = 2;
+		if (playerTurn && isEndOfGame ()) {
+			Debug.Log ("Comp Won!");
+			ended = true;
+		} else {
+			playerTurn = true;
+		}
 	}
 }

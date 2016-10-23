@@ -12,24 +12,15 @@ public class PlayerMovement : MonoBehaviour
 	Rigidbody2D rb;
 
 	// Use this for initialization
-<<<<<<< HEAD
 	void Start ()
 	{
 		rb = gameObject.GetComponent<Rigidbody2D> ();
+		timer = 0.00f;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		float horiz = Input.GetAxis ("Horizontal") * speed;
-=======
-	void Start () {
-		rb = gameObject.GetComponent<Rigidbody2D>();
-		timer = 0.00f;
-	}
-	
-	// Update is called once per frame
-	void Update () {
 		if (timer < 5.00f) {
 			timer += Time.deltaTime;
 		}
@@ -39,30 +30,24 @@ public class PlayerMovement : MonoBehaviour
 			this.gameObject.transform.position = SM.getPlayerPos ();
 		}
 
-		float horiz = Input.GetAxis("Horizontal") * speed;
->>>>>>> master
+		float horiz = Input.GetAxis ("Horizontal") * speed;
 
 		rb.velocity = new Vector2 (horiz, rb.velocity.y);
 
-<<<<<<< HEAD
-		if (Input.GetButtonDown ("Jump")) {
-			rb.AddForce (Vector2.up * jumpForce);
-=======
 		if (rb.velocity.magnitude > 0.1) {
-			gameObject.GetComponent<Animator>().SetBool("Moving", true);
+			gameObject.GetComponent<Animator> ().SetBool ("Moving", true);
 		} else {
-			gameObject.GetComponent<Animator>().SetBool("Moving", false);
+			gameObject.GetComponent<Animator> ().SetBool ("Moving", false);
 		}
 
 		if (rb.velocity.x > 0) {
-			gameObject.GetComponent<SpriteRenderer>().flipX = false;
+			gameObject.GetComponent<SpriteRenderer> ().flipX = false;
 		} else {
-			gameObject.GetComponent<SpriteRenderer>().flipX = true;
+			gameObject.GetComponent<SpriteRenderer> ().flipX = true;
 		}
 
-		if (Input.GetButtonDown("Jump")) {
-			rb.AddForce(Vector2.up * jumpForce);
->>>>>>> master
+		if (Input.GetButtonDown ("Jump")) {
+			rb.AddForce (Vector2.up * jumpForce);
 		}
 	}
 }

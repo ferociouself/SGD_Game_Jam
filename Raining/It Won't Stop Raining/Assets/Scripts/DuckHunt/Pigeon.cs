@@ -8,6 +8,7 @@ public class Pigeon : MonoBehaviour {
 	float xSpeed; //Horizontal Speed
 	float yInitialSpeed; //Initial Y speed
 	public Rigidbody2D rb;
+	public AudioSource hitsound;
 
 	char[] c = { ' ' };
 
@@ -32,6 +33,7 @@ public class Pigeon : MonoBehaviour {
 		ospeed = 180;
 		Destroy (GetComponent<Collider2D> ());
 		//Add points, make sound here.
+		hitsound.Play();
 
 		string curr = GameObject.Find("Canv").GetComponentInChildren<Text> ().text;
 		string[] spliced = curr.Split (c, 2);

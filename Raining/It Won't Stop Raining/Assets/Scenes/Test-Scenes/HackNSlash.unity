@@ -427,7 +427,6 @@ GameObject:
   - 58: {fileID: 677708665}
   - 50: {fileID: 677708663}
   - 114: {fileID: 677708660}
-  - 114: {fileID: 677708664}
   - 114: {fileID: 677708661}
   m_Layer: 0
   m_Name: Player
@@ -552,17 +551,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &677708664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 677708657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 529c6741716663b42a05818fbff18a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &677708665
 CircleCollider2D:
   m_ObjectHideFlags: 0

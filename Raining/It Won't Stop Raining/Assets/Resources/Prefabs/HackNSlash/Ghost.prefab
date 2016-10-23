@@ -20,11 +20,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013402663626}
   - 212: {fileID: 212000012875893902}
+  - 95: {fileID: 95000011248682474}
   - 58: {fileID: 58000012976171804}
   - 50: {fileID: 50000013943250704}
   - 114: {fileID: 114000014053648688}
-  - 114: {fileID: 114000010350797956}
-  - 95: {fileID: 95000011248682474}
   - 114: {fileID: 114000013680391124}
   m_Layer: 8
   m_Name: Ghost
@@ -40,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011737483904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -76,7 +75,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.09
+  m_Radius: 0.07
 --- !u!95 &95000011248682474
 Animator:
   serializedVersion: 3
@@ -94,17 +93,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114000010350797956
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011737483904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 529c6741716663b42a05818fbff18a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000013680391124
 MonoBehaviour:
   m_ObjectHideFlags: 1

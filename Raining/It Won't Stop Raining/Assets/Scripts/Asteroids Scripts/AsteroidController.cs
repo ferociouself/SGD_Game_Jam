@@ -43,35 +43,25 @@ public class AsteroidController : MonoBehaviour {
 	}
 
 	void Split() {
-		GameObject ast1;
-		GameObject ast2;
+		GameObject ast1 = (GameObject)(Resources.Load("Prefabs/Asteroids/Asteroid", typeof(GameObject)));
+		GameObject ast2 = (GameObject)(Resources.Load("Prefabs/Asteroids/Asteroid", typeof(GameObject)));
 
-		ast1 = (GameObject)(Resources.Load("Prefabs/Asteroids/Asteroid", typeof(GameObject)));
-		ast2 = (GameObject)(Resources.Load("Prefabs/Asteroids/Asteroid", typeof(GameObject)));
+		GameObject instAst1 = GameObject.Instantiate(ast1);
+		GameObject instAst2 = GameObject.Instantiate(ast2);
 
-		AsteroidController ast1Cont = ast1.GetComponent<AsteroidController>();
-		AsteroidController ast2Cont = ast2.GetComponent<AsteroidController>();
+		AsteroidController ast1Cont = instAst1.GetComponent<AsteroidController>();
+		AsteroidController ast2Cont = instAst2.GetComponent<AsteroidController>();
 
 		ast1Cont.size = (AsteroidSize)(this.size - 1);
 		ast2Cont.size = (AsteroidSize)(this.size - 1);
 
-		ast1Cont.dir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
-		Debug.Log(ast1Cont.dir);
-		ast2Cont.dir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
-		Debug.Log(ast2Cont.dir);
+		ast1Cont.dir = new Vector2(Random.Range(-1.0f, -0.1f), Random.Range(-1.0f, 1.0f));
+		ast2Cont.dir = new Vector2(Random.Range(0.1f, 1.0f), Random.Range(-1.0f, 1.0f));
 
 		ast1Cont.speed = this.speed * 1.1f;
 		ast2Cont.speed = this.speed * 1.1f;
 
-		ast1.transform.position = gameObject.transform.position;
-		ast2.transform.position = gameObject.transform.position;
-
-
-
-		GameObject instAst1;
-		GameObject instAst2;
-
-		instAst1 = GameObject.Instantiate(ast1);
-		instAst2 = GameObject.Instantiate(ast2);
+		instAst1.transform.position = gameObject.transform.position + (Vector3)ast1Cont.dir;
+		instAst2.transform.position = gameObject.transform.position + (Vector3)ast2Cont.dir;
 	}
 }

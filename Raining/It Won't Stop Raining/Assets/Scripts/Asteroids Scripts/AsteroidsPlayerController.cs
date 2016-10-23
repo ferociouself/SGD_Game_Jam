@@ -14,6 +14,7 @@ public class AsteroidsPlayerController : MonoBehaviour {
 	float curRot;
 	Vector2 force;
 
+	bool won = false;
 
 	// Use this for initialization
 	void Start () {
@@ -40,10 +41,16 @@ public class AsteroidsPlayerController : MonoBehaviour {
 		if (Input.GetButtonDown("Activate")) {
 			FireProjectile();
 		}
+
+		if (GameObject.FindGameObjectsWithTag("Asteroid").Length == 0 && !won) {
+			Debug.Log("You win!");
+			won = true;
+			// End Game
+		}
+
 	}
 
 	void FireProjectile() {
-		Debug.Log("Fire!");
 		GameObject bullet1;
 		GameObject bullet2;
 

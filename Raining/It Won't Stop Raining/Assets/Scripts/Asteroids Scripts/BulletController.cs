@@ -23,15 +23,11 @@ public class BulletController : MonoBehaviour {
 			Destroy(gameObject);
 		} else {
 			curTime += Time.deltaTime;
-			Debug.Log(curTime);
 		}
 		rb.velocity = bulletVel * bulletSpeed;
-		Debug.Log(bulletVel);
-		Debug.Log(bulletSpeed);
 	}
 
 	public void SetVelocity(Vector2 vel) {
 		bulletVel = vel;
-		Debug.Log("Set " + bulletVel+ " to " + vel);
 	}
 }

@@ -871,6 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   jumpForce: 100
+  timer: 0
 --- !u!4 &389169556 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013820653596, guid: f050e18595a7f8e428d6cf0f4f747e19,
@@ -890,11 +891,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013820653596, guid: f050e18595a7f8e428d6cf0f4f747e19, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.76
+      value: -0.008
       objectReference: {fileID: 0}
     - target: {fileID: 4000013820653596, guid: f050e18595a7f8e428d6cf0f4f747e19, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: -0.207
       objectReference: {fileID: 0}
     - target: {fileID: 4000013820653596, guid: f050e18595a7f8e428d6cf0f4f747e19, type: 2}
       propertyPath: m_LocalPosition.z

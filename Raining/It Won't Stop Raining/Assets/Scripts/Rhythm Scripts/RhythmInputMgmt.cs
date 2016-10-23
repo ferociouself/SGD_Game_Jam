@@ -112,6 +112,11 @@ public class RhythmInputMgmt : MonoBehaviour {
 				break;
 			}
 		}
+
+		if (time >= 129.00f) {
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
+		}
 	}
 
 	private bool EmitAndDestroy(GameObject obj){

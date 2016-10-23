@@ -19,4 +19,8 @@ public class BallIsLife : MonoBehaviour {
 			rb.velocity *= 0.9f;
 		}
 	}
+
+	void OnCollisionEnter2D(Collider2D other){
+
+	}
 }

@@ -20,7 +20,6 @@ public class IndicatorController : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown("Activate") && !(activateObject.activeInHierarchy)) {
 			activateObject.SetActive(true);
-			player.GetComponent<Animator>().SetTrigger("Interact");
 		}
 		if (activateObject.activeInHierarchy) {
 			sprite.enabled = false;

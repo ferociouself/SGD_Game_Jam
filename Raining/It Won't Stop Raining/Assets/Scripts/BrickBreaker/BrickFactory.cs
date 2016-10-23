@@ -26,7 +26,5 @@ public class BrickFactory : MonoBehaviour {
 		newBoi.transform.position = position;
 		GameObject newerBoi = GameObject.Instantiate (newBoi);
 		newerBoi.GetComponent<Brick>().scoreBox = scoreBox;
-		Debug.Log (scoreBox);
-		Debug.Log (newerBoi.GetComponent<Brick> ());
 	}
 }

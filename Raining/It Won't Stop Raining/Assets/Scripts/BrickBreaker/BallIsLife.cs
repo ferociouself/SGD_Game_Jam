@@ -19,7 +19,7 @@ public class BallIsLife : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other){
 		if (other.gameObject.tag == "Bouncer") {
-			float xdiff = this.gameObject.transform.position.x - other.gameObject.transform.position.x;
+			
 		}
 	}
 }

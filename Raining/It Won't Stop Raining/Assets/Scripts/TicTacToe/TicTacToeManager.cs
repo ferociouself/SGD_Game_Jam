@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class TicTacToeManager : MonoBehaviour {
 
 	GameObject[][] tiles;
+	public AudioClip xSound,oSound;
 
 	bool playerTurn;
 	float turnDelay;
@@ -49,6 +50,7 @@ public class TicTacToeManager : MonoBehaviour {
 		if (playerTurn && t.state == 0) {
 			t.state = 1;
 			t.GetComponent<SpriteRenderer> ().sprite = t.xImage;
+			AudioSource.PlayClipAtPoint (xSound,new Vector2(0,0));
 			playerTurn = false;
 			turnDelay = turnDelayTime;
 		}
@@ -212,6 +214,7 @@ public class TicTacToeManager : MonoBehaviour {
 	void compPlay(int x,int y){
 		tiles [x] [y].GetComponent<SpriteRenderer> ().sprite = tiles [x] [y].GetComponent<TicTacTile> ().oImage;
 		tiles [x] [y].GetComponent<TicTacTile> ().state = 2;
+		AudioSource.PlayClipAtPoint (oSound, new Vector2 (0, 0));
 		if (playerTurn && isEndOfGame ()) {
 			Debug.Log ("Comp Won!");
 			ended = true;

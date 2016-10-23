@@ -7,6 +7,8 @@ public class RacingController : MonoBehaviour {
 
 	Rigidbody2D rb;
 
+	bool passedCheckpoint;
+
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D>();
@@ -31,6 +33,16 @@ public class RacingController : MonoBehaviour {
 		}
 		else if (Input.GetButton("Left")) {
 			rb.angularVelocity = speed * 20;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D coll) {
+		if (coll.gameObject.name == "Halfway Checkpoint") {
+			passedCheckpoint = true;
+			Debug.Log("Player Passed Checkpoint");
+		}
+		if (coll.gameObject.name == "Finish Line" && passedCheckpoint) {
+			Debug.Log("Player Wins!");
 		}
 	}
 }

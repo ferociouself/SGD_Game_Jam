@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Movable
+  - Node
+  - Bouncer
+  - Ball
   layers:
   - Default
   - TransparentFX

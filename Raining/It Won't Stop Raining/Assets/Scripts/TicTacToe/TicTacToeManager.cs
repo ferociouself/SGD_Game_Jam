@@ -24,7 +24,7 @@ public class TicTacToeManager : MonoBehaviour {
 				tile.transform.position = pos + new Vector2 (i * scale,-1 * j * scale);
 				tile.transform.localScale = new Vector2 (scale,scale);
 				tiles[i][j] = GameObject.Instantiate (tile);
-				var ttt = tile.GetComponent<TicTacTile> ();
+				var ttt = tiles[i][j].GetComponent<TicTacTile> ();
 				ttt.x = i;
 				ttt.y = j;
 				ttt.parent = this;
@@ -56,12 +56,12 @@ public class TicTacToeManager : MonoBehaviour {
 			t.GetComponent<SpriteRenderer> ().sprite = t.xImage;
 			playerTurn = false;
 			turnDelay = turnDelayTime;
+			AudioSource.PlayClipAtPoint (xSound,new Vector2(0,0));
 			if (isEndOfGame ()) {
 				Debug.Log ("You Won!");
 				ended = true;
 			}
 		}
-		AudioSource.PlayClipAtPoint (xSound,new Vector2(0,0));
 	}
 
 	void makeComputerMove(){
@@ -218,12 +218,12 @@ public class TicTacToeManager : MonoBehaviour {
 	void compPlay(int x,int y){
 		tiles [x] [y].GetComponent<SpriteRenderer> ().sprite = tiles [x] [y].GetComponent<TicTacTile> ().oImage;
 		tiles [x] [y].GetComponent<TicTacTile> ().state = 2;
+		AudioSource.PlayClipAtPoint (oSound, new Vector2 (0, 0));
 		if (isEndOfGame ()) {
 			Debug.Log ("Comp Won!");
 			ended = true;
 		} else {
 			playerTurn = true;
 		}
-		AudioSource.PlayClipAtPoint (oSound, new Vector2 (0, 0));
 	}
 }

@@ -22,10 +22,17 @@ public class PlayerInventoryController : MonoBehaviour {
 
 	public void setInventory(Dictionary<InteractableController.ActivateType, bool> inv){
 		this.inventory = inv;
-		for (int i = 0; i < this.inventory.Count; i++) {
+		foreach(InteractableController.ActivateType key in this.inventory.Keys){
 			//go through all objects in inventory that are active and
 			//activate them
+			if (inventory [key]) {
+				ui.ActivateIcon (key);
+			}
 		}
+	}
+
+	public Dictionary<InteractableController.ActivateType, bool> getInventory(){
+		return this.inventory;
 	}
 	
 	// Update is called once per frame

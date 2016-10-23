@@ -13,9 +13,16 @@ public class RhythmController : MonoBehaviour {
 	int mIndex;
 	float mTime;
 
+	float delayTime = 0;
+
+	public GameObject arrowL;
+	public GameObject arrowB;
+
 	// Use this for initialization
 	void Start () {
-		SPEED_V = 3.55f/6.94f * SPEED_H;
+		float numerator = Mathf.Abs (Camera.main.ScreenToWorldPoint (arrowB.transform.position).y);
+		float dominator = Mathf.Abs (Camera.main.ScreenToWorldPoint (arrowL.transform.position).x);
+		SPEED_V = numerator/dominator * SPEED_H;
 
 		mArr = new List<Node>();
 		mArr.Add(new Node (GenBirthTime(7.159f), SPEED_H, Vector2.left));
@@ -263,7 +270,14 @@ public class RhythmController : MonoBehaviour {
 				}
 			}
 		} else {
-			Debug.Log ("I am done, Sir."); //THe ENd
+			if(mDeployed.Count <= 0){
+				delayTime += Time.deltaTime;
+				if(delayTime >= 5.0){
+					Debug.Log ("I am done, Sir.");
+					SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+					SM.MoveToScene (0); //THe ENd
+				}
+			}
 		}
 	}
 
@@ -287,7 +301,7 @@ public class RhythmController : MonoBehaviour {
 	}
 
 	private float GenBirthTime(float hit){
-		return hit - (Mathf.Abs(6.94f) / SPEED_H);
+		return (hit - (Mathf.Abs (Camera.main.ScreenToWorldPoint (arrowL.transform.position).x)) / SPEED_H);
 	}
 }
 

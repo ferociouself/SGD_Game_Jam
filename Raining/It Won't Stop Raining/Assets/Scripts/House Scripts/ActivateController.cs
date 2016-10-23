@@ -42,6 +42,8 @@ public class ActivateController : MonoBehaviour {
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_TOYSWORD)){
 					//Do things to start Hack and Slash!
 					Debug.Log("Hack and Slash Started!");
+					SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+					SM.MoveToScene (4, player.GetComponent<PlayerInventoryController> ().getInventory());
 				}else {
 					//Tell the player that they need an item.
 					Debug.Log("Need a sword!");

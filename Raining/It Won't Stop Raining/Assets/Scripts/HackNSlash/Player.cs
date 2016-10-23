@@ -1,12 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
-
-    enum Direction
-    {
-        Up, Down, Left, Right
-    }
+public class Player : Mob {
 
     private const KeyCode UPKEY = KeyCode.W;
     private const KeyCode DOWNKEY = KeyCode.S;
@@ -14,76 +9,110 @@ public class Player : MonoBehaviour {
     private const KeyCode RIGHTKEY = KeyCode.D;
     private const KeyCode ATTACKKEY = KeyCode.J;
 
-    public float speed;
     public float swordRange;
+
     public Sprite upSprite, downSprite, leftSprite, rightSprite;
 
-    Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
 
-    Direction direction;
-
-    void Start () {
-        rigidBody = GetComponent<Rigidbody2D>();
+    override protected void Start () {
+        base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	void Update () {
+	override protected void Update () {
         Vector2 velocity = Vector2.zero;
+        walking = false;
         if (Input.GetKey(UPKEY))
         {
             velocity.y = 1;
             direction = Direction.Up;
-            spriteRenderer.sprite = upSprite;
+            walking = true;
+            //spriteRenderer.sprite = upSprite;
         }
         else if (Input.GetKey(DOWNKEY))
         {
             velocity.y = -1;
             direction = Direction.Down;
-            spriteRenderer.sprite = downSprite;
+            walking = true;
+            //spriteRenderer.sprite = downSprite;
         }
         if (Input.GetKey(LEFTKEY))
         {
             velocity.x = -1;
             direction = Direction.Left;
-            spriteRenderer.sprite = leftSprite;
+            walking = true;
+            //spriteRenderer.sprite = leftSprite;
         }
         else if (Input.GetKey(RIGHTKEY))
         {
             velocity.x = 1;
             direction = Direction.Right;
-            spriteRenderer.sprite = rightSprite;
+            walking = true;
+            //spriteRenderer.sprite = rightSprite;
         }
         rigidBody.velocity = velocity.normalized * speed;
+        animator.SetInteger("Direction", (int)direction);
+        animator.SetBool("Walking", walking);
 
-
-        if (Input.GetKey(ATTACKKEY))
+        if (Input.GetKeyDown(ATTACKKEY))
         {
-            print("attack");
-            Vector2 pointA = new Vector2();
-            Vector2 pointB = new Vector2();
-            float x = transform.position.x;
-            float y = transform.position.y;
-            switch (direction)
-            {
-                case Direction.Up:
-                    pointA = new Vector2(x - swordRange, y - swordRange);
-                    pointB = new Vector2(x + 2 * swordRange, y + swordRange);
-                    break;
-                case Direction.Down:
-                    pointA = new Vector2(x - swordRange, y);
-                    pointB = new Vector2(x + 2*swordRange, y + swordRange);
-                    break;
-                case Direction.Left:
-                    pointA = new Vector2(x - swordRange, y - swordRange);
-                    pointB = new Vector2(x + swordRange, y + 2 * swordRange);
-                    break;
-                case Direction.Right:
-                    pointA = new Vector2(x, y - swordRange);
-                    pointB = new Vector2(x + swordRange, y + 2 * swordRange);
-                    break;
-            }
-            Collider2D[] collisions = Physics2D.OverlapAreaAll(pointA, pointB, 1 << 8);
+            Attack();
         }
+    }
+
+    private void Attack()
+    {
+        print("Attack: " + name);
+        animator.SetTrigger("Attack");
+        Vector2 center, size;
+        GetAttackRect(out center, out size);
+        Collider2D[] collisions = Physics2D.OverlapBoxAll(center, size, 0f, LayerMask.GetMask("Monsters"));
+        foreach (Collider2D collision in collisions)
+        {
+            GameObject monsterObj = collision.gameObject;
+            Monster monster = monsterObj.GetComponent<Monster>();
+            monster.Hit(damage);
+        }
+    }
+
+    private void GetAttackRect(out Vector2 center, out Vector2 size)
+    {
+        center = new Vector2();
+        size = new Vector2();
+        float x = transform.position.x;
+        float y = transform.position.y;
+        switch (direction)
+        {
+            case Direction.Down:
+                center = new Vector2(x, y - swordRange / 4);
+                size = new Vector2(swordRange, swordRange / 2);
+                break;
+            case Direction.Up:
+                center = new Vector2(x, y + swordRange / 4);
+                size = new Vector2(swordRange, swordRange / 2);
+                break;
+            case Direction.Left:
+                center = new Vector2(x - swordRange / 4, y);
+                size = new Vector2(swordRange / 2, swordRange);
+                break;
+            case Direction.Right:
+                center = new Vector2(x + swordRange / 4, y);
+                size = new Vector2(swordRange / 2, swordRange);
+                break;
+        }
+    }
+
+    override protected void Die()
+    {
+        print("Player died!!1");
+    }
+
+    void OnDrawGizmos()
+    {
+        Vector2 center, size;
+        GetAttackRect(out center, out size);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(center, size);
     }
 }

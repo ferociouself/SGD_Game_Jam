@@ -1,20 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Monster : MonoBehaviour {
+public class Monster : Mob {
 
-    public float speed;
-
-    Rigidbody2D rigidBody;
+    GameObject playerObj;
     Player player;
 
-	void Start () {
-        rigidBody = GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+    override protected void Start()
+    {
+        base.Start();
+        playerObj = GameObject.FindWithTag("Player");
+        player = playerObj.GetComponent<Player>();
     }
-	
-	void Update () {
+
+    override protected void Update () {
         Vector2 dir = player.transform.position - transform.position;
         rigidBody.velocity = dir.normalized * speed;
 	}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+            Attack();
+    }
+
+    private void Attack()
+    {
+        player.Hit(damage);
+    }
+
+    override protected void Die()
+    {
+        print("Die: " + name);
+        Destroy(gameObject);
+    }
 }

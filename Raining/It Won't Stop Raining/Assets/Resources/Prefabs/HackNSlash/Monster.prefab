@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014189571982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -72,7 +72,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.32}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
 --- !u!114 &114000012508955000
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcf00561eadd544baed78c6b7759c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
+  damage: 1
   speed: 1
 --- !u!212 &212000013885347824
 SpriteRenderer:

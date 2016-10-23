@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BrickFactory : MonoBehaviour {
 
 	public int layers;
+	public Text scoreBox;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,9 @@ public class BrickFactory : MonoBehaviour {
 	void spawnBrick(Vector2 position){
 		GameObject newBoi = (GameObject)(Resources.Load ("Prefabs/BrickBreaker/Brick", typeof(GameObject)));
 		newBoi.transform.position = position;
-		GameObject.Instantiate (newBoi);
+		GameObject newerBoi = GameObject.Instantiate (newBoi);
+		newerBoi.GetComponent<Brick>().scoreBox = scoreBox;
+		Debug.Log (scoreBox);
+		Debug.Log (newerBoi.GetComponent<Brick> ());
 	}
 }

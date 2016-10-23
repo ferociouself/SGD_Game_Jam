@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 5
+  scoreBox: {fileID: 0}
 --- !u!212 &212000011884186546
 SpriteRenderer:
   m_ObjectHideFlags: 1

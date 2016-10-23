@@ -52,7 +52,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1000013528224622}
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.05
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  maxSpeed: 12
 --- !u!212 &212000014152751648
 SpriteRenderer:
   m_ObjectHideFlags: 1

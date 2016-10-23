@@ -2566,7 +2566,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 623115147}
-  - 114: {fileID: 623115148}
   m_Layer: 0
   m_Name: toggleSwitch1
   m_TagString: Untagged
@@ -2587,19 +2586,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 143044451}
   m_RootOrder: 0
---- !u!114 &623115148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 623115146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2575c6c12703c2f498bf6262872d1869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleBox: {fileID: 728502917}
-  counter: 0
 --- !u!1001 &631972952
 Prefab:
   m_ObjectHideFlags: 0
@@ -3848,6 +3834,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 933567985}
+--- !u!1 &979716830 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011190667654, guid: 075758959e727d040935ba74bd2a1270,
+    type: 2}
+  m_PrefabInternal: {fileID: 1882355082}
+--- !u!114 &979716836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 979716830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68412f1bb879ad248a6a4bfa2277cb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986594100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,7 +4141,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1024959826}
-  - 114: {fileID: 1024959827}
   m_Layer: 0
   m_Name: toggleSwitch2
   m_TagString: Untagged
@@ -4160,19 +4161,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 143044451}
   m_RootOrder: 1
---- !u!114 &1024959827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1024959825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2575c6c12703c2f498bf6262872d1869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleBox: {fileID: 1759051999}
-  counter: 0
 --- !u!1 &1077202258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,7 +4897,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1239688912}
-  - 114: {fileID: 1239688913}
   m_Layer: 0
   m_Name: toggleSwitch3
   m_TagString: Untagged
@@ -4930,19 +4917,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 143044451}
   m_RootOrder: 2
---- !u!114 &1239688913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1239688911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2575c6c12703c2f498bf6262872d1869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleBox: {fileID: 1292051346}
-  counter: 0
 --- !u!1 &1260661259
 GameObject:
   m_ObjectHideFlags: 0

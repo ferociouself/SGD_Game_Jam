@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour {
         health = 100;
 	}
     
-    void takeDamage(float damage)
+    public void takeDamage(float damage)
     {
         health -= damage;
     }

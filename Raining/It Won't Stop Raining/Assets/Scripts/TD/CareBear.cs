@@ -5,13 +5,14 @@ public class CareBear : MonoBehaviour {
 
 	float radius;
 	float delay,cooldown;
-	float 
+    float damage;
 
 	// Use this for initialization
 	void Start () {
 		radius = 0.75f;
 		delay = 3f;
 		cooldown = delay;
+        damage = 40f;
 	}
 	
 	// Update is called once per frame
@@ -26,7 +27,7 @@ public class CareBear : MonoBehaviour {
 	void attack(){
 		Collider2D[] enemies = Physics2D.OverlapCircleAll (gameObject.transform.position, radius);
 		for (int i = 0; i < enemies.Length; i++) {
-			//enemies [i].takeDamage (40);
+			enemies [i].gameObject.GetComponent<EnemyHealth>().takeDamage (damage);
 		}
 	}
 }

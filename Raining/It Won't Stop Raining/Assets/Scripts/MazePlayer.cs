@@ -22,9 +22,9 @@ public class MazePlayer : MonoBehaviour {
 			detectCollision ();
 			followMouse ();
 		}
-//		if (detectCollision ()) {
-//			Application.LoadLevel (0);
-//		}
+		if (transform.position.x > 11 && transform.position.y <-7) {
+			Application.LoadLevel (0);
+		}
 	}
 
 	void followMouse() {

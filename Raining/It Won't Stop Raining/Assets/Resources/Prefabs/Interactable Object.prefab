@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicator: {fileID: 1000010161230930}
   player: {fileID: 1000011361414762, guid: 00b573f0e7611400ea393d8b257ee471, type: 2}
-  range: 0.5
+  range: 0.25
   type: 13
 --- !u!212 &212000012968279312
 SpriteRenderer:

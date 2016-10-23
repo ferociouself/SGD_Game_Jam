@@ -108,7 +108,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 				&& obj.GetComponent<LiveAndBreathe>().getStartTime() < this.time + 3) {
 				//swing and a miss!
 				//IncrementScore((int)(-1.00 * (int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f))));
-				DestroyPlz(obj);
+				//DestroyPlz(obj);
 				break;
 			}
 		}

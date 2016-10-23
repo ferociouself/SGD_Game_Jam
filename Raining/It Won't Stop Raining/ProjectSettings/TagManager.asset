@@ -8,6 +8,8 @@ TagManager:
   - Node
   - Bouncer
   - Ball
+  - Projectile
+  - Brick
   layers:
   - Default
   - TransparentFX

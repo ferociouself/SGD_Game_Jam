@@ -21,10 +21,6 @@ public class RoomTrigger : MonoBehaviour {
 		this.GetComponent<SpriteRenderer> ().color = dark;
 		last = dark;
 		target = dark;
-
-		if (darkfactor == null){
-			darkfactor = 0.0f;
-		}
 	}
 
 	// Update is called once per frame

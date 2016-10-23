@@ -15,6 +15,8 @@ public class RhythmInputMgmt : MonoBehaviour {
 	public GameObject LeftCircle;
 	public GameObject DownCircle;
 
+	Vector2 screenInWorld = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+
 	public float Difficulty;
 	public float BASE_F; //for scoring
 
@@ -44,18 +46,15 @@ public class RhythmInputMgmt : MonoBehaviour {
 		if(Input.GetButtonDown("Up")){
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
-				Debug.Log ("POS of Obj:" + (Vector2)(obj.transform.position));
-				Debug.Log ("POS of Arrow:" + (Vector2)(Camera.main.ScreenToWorldPoint(UpCircle.transform.position)));
 				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(UpCircle.transform.position)), Difficulty)) {
 					//hit
-					Debug.Log("She's a hit!");
 					IncrementScore((int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f)));
 					hit = EmitAndDestroy (obj);
 					break;
 				}
 			}
 			if (!hit) {
-				//IncrementScore ((int)((-1.00 * (BASE_F / 2.0f) * Mathf.Sqrt (Mathf.Sqrt (time))) * Random.Range (1.0f, 2.0f)));
+				IncrementScore ((int)((-1.00 * (BASE_F / 2.0f) * Mathf.Sqrt (Mathf.Sqrt (time))) * Random.Range (1.0f, 2.0f)));
 			}
 		}
 
@@ -105,8 +104,8 @@ public class RhythmInputMgmt : MonoBehaviour {
 		}
 
 		foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
-			if (!obj.GetComponent<SpriteRenderer> ().isVisible 
-				&& !StaticMethods.AlmostEquals(obj.GetComponent<LiveAndBreathe>().getStartTime(), this.time, 1.0f)) {
+			if (!(obj.GetComponent<SpriteRenderer>().isVisible)
+				&& obj.GetComponent<LiveAndBreathe>().getStartTime() < this.time + 3) {
 				//swing and a miss!
 				//IncrementScore((int)(-1.00 * (int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f))));
 				DestroyPlz(obj);
@@ -123,7 +122,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 
 	private bool DestroyPlz(GameObject obj){
 		Object.Destroy (obj, 2.0f);
-		return gameObject.GetComponent<RhythmController> ().getDeployed ().Remove (obj);
+		return gameObject.GetComponent<RhythmController> ().getDeployed ().Remove(obj);
 	}
 
 	private void IncrementScore(int incr){

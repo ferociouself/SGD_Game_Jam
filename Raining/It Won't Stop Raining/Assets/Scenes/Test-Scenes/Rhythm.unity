@@ -736,7 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempo: 138
   scale: 4
-  LERP_TIME: 0.36
+  LERP_TIME: 0.4
 --- !u!1 &1020390290
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempo: 138
   scale: 4
-  LERP_TIME: 0.36
+  LERP_TIME: 0.4
 --- !u!1 &1296273215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempo: 138
   scale: 4
-  LERP_TIME: 0.38
+  LERP_TIME: 0.4
 --- !u!1 &1895485579
 GameObject:
   m_ObjectHideFlags: 0

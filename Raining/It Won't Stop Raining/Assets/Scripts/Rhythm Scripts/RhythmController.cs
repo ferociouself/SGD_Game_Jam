@@ -18,27 +18,62 @@ public class RhythmController : MonoBehaviour {
 		SPEED_V = 3.55f/6.94f * SPEED_H;
 
 		mArr = new List<Node>();
-		mArr.Add(new Node (2.00f, SPEED_V, Vector2.up));
-		mArr.Add(new Node (2.04f, SPEED_H, Vector2.left));
-		mArr.Add(new Node (4.00f, SPEED_H, Vector2.right));
-		mArr.Add(new Node (6.00f, SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(7.159f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(7.430f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(7.702f), SPEED_H, Vector2.right));
+		mArr.Add(new Node (GenBirthTime(8.100f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(8.638f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(9.009f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(9.288f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(9.381f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(9.567f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(9.752f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(9.938f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(10.124f), SPEED_V, Vector2.up));
+
+		mArr.Add(new Node (GenBirthTime(10.550f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(11.000f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(11.200f), SPEED_H, Vector2.right));
+		mArr.Add(new Node (GenBirthTime(11.547f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(12.074f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(12.360f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(12.650f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(12.901f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(13.101f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(13.350f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(13.560f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(13.775f), SPEED_V, Vector2.up));
+
+		mArr.Add(new Node (GenBirthTime(14.200f), SPEED_H, Vector2.right));
+		mArr.Add(new Node (GenBirthTime(14.391f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(14.856f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(15.000f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(15.300f), SPEED_H, Vector2.right));
+		mArr.Add(new Node (GenBirthTime(16.169f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(15.950f), SPEED_H, Vector2.right));
+		mArr.Add(new Node (GenBirthTime(16.200f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(16.590f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(17.000f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(17.275f), SPEED_V, Vector2.up));
+
+
 
 		mIndex = 0;
 		mTime = 0.00f;
 		mDeployed = new List<GameObject> ();
-
 	}
 
 	// Update is called once per frame
 	void Update () {
 		mTime += Time.deltaTime;
 		Node next = mArr [mIndex];
-		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 0.50f * Time.deltaTime);
+		bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 0.70f * Time.deltaTime);
 		if (res) {
 			deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
 			if(mIndex < mArr.Count - 1){ 
 				mIndex++; 
 			}
+			Debug.Log (mTime.ToString ());
 		}
 	}
 

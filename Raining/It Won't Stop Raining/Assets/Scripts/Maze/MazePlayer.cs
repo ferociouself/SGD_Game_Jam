@@ -10,6 +10,8 @@ public class MazePlayer : MonoBehaviour {
 	private Texture2D heightmap;
 	public Vector3 size = new Vector3(100, 10, 100);
 
+	float timer = 40.0f;
+
 	// Use this for initialization
 	void Start () {
 		size = spr.border;
@@ -22,9 +24,17 @@ public class MazePlayer : MonoBehaviour {
 			detectCollision ();
 			followMouse ();
 		}
-//		if (detectCollision ()) {
-//			Application.LoadLevel (0);
-//		}
+		if (transform.position.x > 11 && transform.position.y <-7) {
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
+		}
+
+		timer -= Time.deltaTime;
+
+		if (timer <= 0.00f) {
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
+		}
 	}
 
 	void followMouse() {

@@ -37,6 +37,10 @@ public class TicTacToeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!ended && isEndOfGame ()) {
+			Debug.Log ("END");
+			ended = true;
+		}
 		if (!playerTurn && !ended) {
 			if (turnDelay <= 0) {
 				makeComputerMove ();
@@ -50,14 +54,14 @@ public class TicTacToeManager : MonoBehaviour {
 		if (playerTurn && t.state == 0) {
 			t.state = 1;
 			t.GetComponent<SpriteRenderer> ().sprite = t.xImage;
-			AudioSource.PlayClipAtPoint (xSound,new Vector2(0,0));
 			playerTurn = false;
 			turnDelay = turnDelayTime;
+			if (isEndOfGame ()) {
+				Debug.Log ("You Won!");
+				ended = true;
+			}
 		}
-		if (playerTurn && isEndOfGame ()) {
-			Debug.Log ("You Won!");
-			ended = true;
-		}
+		AudioSource.PlayClipAtPoint (xSound,new Vector2(0,0));
 	}
 
 	void makeComputerMove(){
@@ -214,12 +218,12 @@ public class TicTacToeManager : MonoBehaviour {
 	void compPlay(int x,int y){
 		tiles [x] [y].GetComponent<SpriteRenderer> ().sprite = tiles [x] [y].GetComponent<TicTacTile> ().oImage;
 		tiles [x] [y].GetComponent<TicTacTile> ().state = 2;
-		AudioSource.PlayClipAtPoint (oSound, new Vector2 (0, 0));
-		if (playerTurn && isEndOfGame ()) {
+		if (isEndOfGame ()) {
 			Debug.Log ("Comp Won!");
 			ended = true;
 		} else {
 			playerTurn = true;
 		}
+		AudioSource.PlayClipAtPoint (oSound, new Vector2 (0, 0));
 	}
 }

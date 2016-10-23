@@ -19,3 +19,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Test-Scenes/Rhythm.unity
   - enabled: 1
     path: Assets/Scenes/Test-Scenes/TicTacToe.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Brick-Breaker.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Asteroids.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/UltimateMaze.unity

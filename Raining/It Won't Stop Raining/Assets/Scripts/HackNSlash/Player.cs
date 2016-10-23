@@ -12,9 +12,11 @@ public class Player : Mob {
     public float swordRange;
 
     private float attackTimer = 0f;
+    private SpriteRenderer spriteRenderer;
 
     override protected void Start () {
         base.Start();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	override protected void Update () {
@@ -48,6 +50,9 @@ public class Player : Mob {
             }
         }
         rigidBody.velocity = velocity.normalized * speed;
+        spriteRenderer.flipX = direction == Direction.Left;
+        animator.SetBool("Walking", walking);
+        animator.SetInteger("Direction", (int)direction);
 
         if (attackTimer <= 0 && Input.GetKeyDown(ATTACKKEY))
         {

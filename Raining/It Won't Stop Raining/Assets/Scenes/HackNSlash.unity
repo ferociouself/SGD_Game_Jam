@@ -194,7 +194,6 @@ GameObject:
   - 50: {fileID: 677708663}
   - 114: {fileID: 677708660}
   - 114: {fileID: 677708664}
-  - 114: {fileID: 677708661}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -269,19 +268,6 @@ MonoBehaviour:
   speed: 2
   attackCooldown: 0.5
   swordRange: 0.66
---- !u!114 &677708661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 677708657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f06611200c3db4dad0da06af7b009e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MultiDirectional: 1
-  InitialDirection: 2
 --- !u!95 &677708662
 Animator:
   serializedVersion: 3
@@ -340,7 +326,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.12
 --- !u!1 &764142325
 GameObject:
   m_ObjectHideFlags: 0

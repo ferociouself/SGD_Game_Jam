@@ -6,7 +6,10 @@ public class SceneManager : MonoBehaviour {
 
 	public static SceneManager s_instance;
 
+	UnityEngine.SceneManagement.SceneManager SM;
+
 	Dictionary<InteractableController.ActivateType, bool> inventory;
+	bool firstTime = true;
 
 	/// <summary>
 	/// Awaken this instance.
@@ -24,6 +27,21 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 
+	void OnEnable(){
+		if (!firstTime) {
+			if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex == 0) {
+				if (GameObject.Find ("Jimbo") != null) {
+					GameObject Player = GameObject.Find ("Jimbo");
+					if (Player.GetComponent<PlayerInventoryController> () != null) {
+						Debug.Log ("You shouldn't be here, Harry.");
+						Player.GetComponent<PlayerInventoryController> ().setInventory (this.inventory);
+					}
+				}
+			}
+		}
+		firstTime = false;
+	}
+
 	void Update () { }
 
 
@@ -33,10 +51,23 @@ public class SceneManager : MonoBehaviour {
 	/// <returns><c>true</c>, if to scene was moved, <c>false</c> otherwise.</returns>
 	/// <param name="sceneNumber">Scene number.</param>
 	public void MoveToScene(int sceneNumber) {
-		Application.LoadLevel (sceneNumber);
+		int index = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex;
+
+		if (index != 0) {
+			UnityEngine.SceneManagement.SceneManager.LoadSceneAsync (sceneNumber);
+		}
 	}
 
-	public void SaveHome(){
-		
+	public void MoveToScene(int sceneNumber, Dictionary<InteractableController.ActivateType, bool> inv) {
+		int index = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex;
+
+		if (index == 0) {
+			SaveHome (inv);
+			UnityEngine.SceneManagement.SceneManager.LoadSceneAsync (sceneNumber);
+		}
+	}
+
+	private void SaveHome(Dictionary<InteractableController.ActivateType, bool> inv){
+		this.inventory = inv;
 	}
 }

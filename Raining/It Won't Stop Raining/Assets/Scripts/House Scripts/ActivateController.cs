@@ -30,6 +30,7 @@ public class ActivateController : MonoBehaviour {
 	}
 
 	void Activate() {
+		
 		switch (type) {
 			case InteractableController.ActivateType.TowerDefense:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_ARMYFIGURES)){
@@ -58,7 +59,7 @@ public class ActivateController : MonoBehaviour {
 				}
 				break;
 			case InteractableController.ActivateType.OperationMaze:
-				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_LASERPOINTER)){
+				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_MASK)){
 					//Do things to start Operation: Maze!
 				}else {
 					//Tell the player that they need an item.
@@ -85,6 +86,30 @@ public class ActivateController : MonoBehaviour {
 					//Tell the player that they need an item.
 				}
 				break;
+			case InteractableController.ActivateType.Asteroids:
+				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_BUGSPRAY)) {
+					//START ASTEROIDS
+				} else {
+					// NO START
+				}
+			case InteractableController.ActivateType.BrickBreaker:
+				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_BATTERIES)) {
+					// START BRICK BREAKER
+				} else {
+					// NO START
+				}
+			case InteractableController.ActivateType.DuckHunt:
+				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_SLINGSHOT)) {
+
+				} else {
+
+				}
+			case InteractableController.ActivateType.TicTacToe:
+				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_PEN)) {
+
+				} else {
+
+				}
 			default:
 				if ((int)type > InteractableController.ITEM_START - 1) {
 					playInventory.setInventoryActive(type);
@@ -93,5 +118,17 @@ public class ActivateController : MonoBehaviour {
 				}
 				break;
 		}
+		/*
+		ITEM_TREAT,
+		ITEM_DRUMSTICKS,
+		ITEM_TOYSWORD,
+		ITEM_MODELBOAT,
+		ITEM_SHOES,
+		ITEM_ARMYFIGURES,
+		ITEM_BATTERIES,
+		ITEM_MASK,
+		ITEM_SLINGSHOT,
+		ITEM_GLASSES,
+		ITEM_PEN*/
 	}
 }

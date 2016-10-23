@@ -21,6 +21,8 @@ public class NewBehaviourScript : MonoBehaviour {
         if (input.text.Equals(answer.text))
             {
                 reward.text = "You got it!";
+				SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+				SM.MoveToScene (0);
             }
             else
             {

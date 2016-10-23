@@ -35,7 +35,7 @@ public class ActivateController : MonoBehaviour {
 			case InteractableController.ActivateType.TowerDefense:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_ARMYFIGURES)){
 					//Do things to start Tower Defense!
-					//SM.MoveToScene (4, player.GetComponent<PlayerInventoryController> ().getInventory(), player.transform.position);
+				SM.MoveToScene (10, player.GetComponent<PlayerInventoryController> ().getInventory(), player.transform.position);
 				}else {
 					//Tell the player that they need an item.
 				}
@@ -50,6 +50,16 @@ public class ActivateController : MonoBehaviour {
 					//Debug.Log("Need a sword!");
 				}
 				break;
+			case InteractableController.ActivateType.Riddle:
+				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_TOYSWORD)){
+					//Do things to start Hack and Slash!
+					//Debug.Log("Hack and Slash Started!");
+					SM.MoveToScene (9, player.GetComponent<PlayerInventoryController> ().getInventory(), player.transform.position);
+				} else {
+					//Tell the player that they need an item.
+					//Debug.Log("Need a sword!");
+				}
+			break;
 			case InteractableController.ActivateType.HideAndSeek:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_TREAT)){
 					//Do things to start Hide and Seek!

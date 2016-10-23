@@ -8148,11 +8148,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012605130792, guid: 49e377c34797244cd8da425defc9954c, type: 2}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000012605130792, guid: 49e377c34797244cd8da425defc9954c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000012605130792, guid: 49e377c34797244cd8da425defc9954c, type: 2}
       propertyPath: m_LocalPosition.y

@@ -294,6 +294,7 @@ public class RhythmController : MonoBehaviour {
 		GameObject boi = GameObject.Instantiate (go);
 		boi.GetComponent<Rigidbody2D> ().velocity = direction * speed;
 		mDeployed.Add (boi);
+		Debug.Log (boi.GetComponent<Rigidbody2D> ().velocity = direction * speed);
 	}
 
 	public List<GameObject> getDeployed(){

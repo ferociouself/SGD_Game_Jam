@@ -44,15 +44,18 @@ public class RhythmInputMgmt : MonoBehaviour {
 		if(Input.GetButtonDown("Up")){
 			bool hit = false;
 			foreach (GameObject obj in gameObject.GetComponent<RhythmController>().getDeployed()) {
+				Debug.Log ("POS of Obj:" + (Vector2)(obj.transform.position));
+				Debug.Log ("POS of Arrow:" + (Vector2)(Camera.main.ScreenToWorldPoint(UpCircle.transform.position)));
 				if (StaticMethods.AlmostEquals((Vector2)(obj.transform.position), (Vector2)(Camera.main.ScreenToWorldPoint(UpCircle.transform.position)), Difficulty)) {
 					//hit
+					Debug.Log("She's a hit!");
 					IncrementScore((int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f)));
 					hit = EmitAndDestroy (obj);
 					break;
 				}
 			}
 			if (!hit) {
-				IncrementScore ((int)((-1.00 * (BASE_F / 2.0f) * Mathf.Sqrt (Mathf.Sqrt (time))) * Random.Range (1.0f, 2.0f)));
+				//IncrementScore ((int)((-1.00 * (BASE_F / 2.0f) * Mathf.Sqrt (Mathf.Sqrt (time))) * Random.Range (1.0f, 2.0f)));
 			}
 		}
 
@@ -105,7 +108,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 			if (!obj.GetComponent<SpriteRenderer> ().isVisible 
 				&& !StaticMethods.AlmostEquals(obj.GetComponent<LiveAndBreathe>().getStartTime(), this.time, 1.0f)) {
 				//swing and a miss!
-				IncrementScore((int)(-1.00 * (int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f))));
+				//IncrementScore((int)(-1.00 * (int)(BASE_F * Mathf.Sqrt(time) * Random.Range(1.0f, 3.0f))));
 				DestroyPlz(obj);
 				break;
 			}

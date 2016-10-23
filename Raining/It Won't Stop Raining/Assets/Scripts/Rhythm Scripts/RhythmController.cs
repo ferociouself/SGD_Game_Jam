@@ -213,16 +213,37 @@ public class RhythmController : MonoBehaviour {
 		mArr.Add(new Node (GenBirthTime(106.852f), SPEED_H, Vector2.left));
 		mArr.Add(new Node (GenBirthTime(107.038f), SPEED_V, Vector2.down));
 		mArr.Add(new Node (GenBirthTime(107.316f), SPEED_H, Vector2.right));
-		mArr.Add(new Node (GenBirthTime(107.502f), SPEED_H, Vector2.right));
 		mArr.Add(new Node (GenBirthTime(107.761f), SPEED_V, Vector2.up));
 		mArr.Add(new Node (GenBirthTime(108.059f), SPEED_H, Vector2.left));
-		mArr.Add(new Node (GenBirthTime(108.270f), SPEED_V, Vector2.down));
 		mArr.Add(new Node (GenBirthTime(108.368f), SPEED_V, Vector2.down));
 		mArr.Add(new Node (GenBirthTime(108.646f), SPEED_H, Vector2.right));
 
+		mArr.Add(new Node (GenBirthTime(111.379f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(111.844f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(112.112f), SPEED_H, Vector2.right));
 
-		mArr.Add(new Node (GenBirthTime(2000.477f), SPEED_V, Vector2.up));
-		//dummy node at the end
+		mArr.Add(new Node (GenBirthTime(113.777f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(114.149f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(114.242f), SPEED_H, Vector2.right));
+		mArr.Add(new Node (GenBirthTime(114.613f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(114.892f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(115.370f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(115.600f), SPEED_H, Vector2.right));
+
+		mArr.Add(new Node (GenBirthTime(118.395f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(118.673f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(119.138f), SPEED_H, Vector2.right));
+
+		mArr.Add(new Node (GenBirthTime(120.800f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(120.964f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(121.243f), SPEED_H, Vector2.right));
+		mArr.Add(new Node (GenBirthTime(121.615f), SPEED_V, Vector2.up));
+		mArr.Add(new Node (GenBirthTime(121.893f), SPEED_H, Vector2.left));
+		mArr.Add(new Node (GenBirthTime(122.265f), SPEED_V, Vector2.down));
+		mArr.Add(new Node (GenBirthTime(122.600f), SPEED_H, Vector2.right));
+
+
+		mArr.Add(new Node (GenBirthTime(20000.477f), SPEED_V, Vector2.up));
 
 		mIndex = 0;
 		mTime = 0.00f;
@@ -234,14 +255,16 @@ public class RhythmController : MonoBehaviour {
 		mTime += Time.deltaTime;
 		Node next = mArr [mIndex];
 		//bool res = StaticMethods.AlmostEquals (next.getTime(), mTime, 2.0f * Time.deltaTime);
-		if (mIndex < mArr.Count - 1){
-			if (mTime >= next.getTime()) {
-				deployArrow (next.getSpeed(), next.getDir());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
-				if(mIndex < mArr.Count - 1){ 
+		if (mIndex < mArr.Count - 1) {
+			if (mTime >= next.getTime ()) {
+				deployArrow (next.getSpeed (), next.getDir ());//fire the next boi, send it on its way, add it to deployed, remove it from mArr
+				if (mIndex < mArr.Count - 1) { 
 					mIndex++; 
 				}
 			}
-		}			
+		} else {
+			Debug.Log ("I am done, Sir."); //THe ENd
+		}
 	}
 
 	/// <summary>

@@ -9,50 +9,31 @@ public class Player : Mob {
     private const KeyCode RIGHTKEY = KeyCode.D;
     private const KeyCode ATTACKKEY = KeyCode.J;
 
-    public float swordRange;
+    public float swordRange = 0.5f;
+    public float attackCooldown = 0.3f;
+    public float damageCooldown = 1f;
 
     private float attackTimer = 0f;
-    private SpriteRenderer spriteRenderer;
+    private float damageTimer = 0f;
 
     override protected void Start () {
         base.Start();
-        spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	override protected void Update () {
-        Vector2 velocity = Vector2.zero;
-        walking = false;
         if (attackTimer <= 0)
         {
-            if (Input.GetKey(UPKEY))
-            {
-                velocity.y = 1;
-                direction = Direction.Up;
-                walking = true;
-            }
-            else if (Input.GetKey(DOWNKEY))
-            {
-                velocity.y = -1;
-                direction = Direction.Down;
-                walking = true;
-            }
-            if (Input.GetKey(LEFTKEY))
-            {
-                velocity.x = -1;
-                direction = Direction.Left;
-                walking = true;
-            }
-            else if (Input.GetKey(RIGHTKEY))
-            {
-                velocity.x = 1;
-                direction = Direction.Right;
-                walking = true;
-            }
+            //float x = 0;
+            //float y = 0;
+            //if (Input.GetKey(DOWNKEY)) y = -1;
+            //else if (Input.GetKey(UPKEY)) y = 1;
+            //if (Input.GetKey(LEFTKEY)) x = -1;
+            //else if (Input.GetKey(RIGHTKEY)) x = 1;
+            float x = Input.GetAxisRaw("Horizontal");
+            float y = Input.GetAxisRaw("Vertical");
+            //print(x + ", " + y);
+            rigidBody.velocity = velocity = new Vector2(x, y).normalized * speed;
         }
-        rigidBody.velocity = velocity.normalized * speed;
-        spriteRenderer.flipX = direction == Direction.Left;
-        animator.SetBool("Walking", walking);
-        animator.SetInteger("Direction", (int)direction);
 
         if (attackTimer <= 0 && Input.GetKeyDown(ATTACKKEY))
         {
@@ -61,11 +42,12 @@ public class Player : Mob {
 
         if (attackTimer > 0)
             attackTimer -= Time.deltaTime;
+        if (damageTimer > 0)
+            damageTimer -= Time.deltaTime;
     }
 
     private void Attack()
     {
-        print("Attack: " + name);
         animator.SetTrigger("Attack");
         attackTimer = attackCooldown;
         //canMove = false;
@@ -91,6 +73,7 @@ public class Player : Mob {
         size = new Vector2();
         float x = transform.position.x;
         float y = transform.position.y;
+        Direction direction = (Direction)animator.GetInteger("Direction");
         switch (direction)
         {
             case Direction.Down:
@@ -112,6 +95,16 @@ public class Player : Mob {
         }
     }
 
+    public override void Hit(int damage)
+    {
+        if (damageTimer <= 0)
+        {
+            //print("Hit!");
+            base.Hit(damage);
+            damageTimer = damageCooldown;
+        }
+    }
+
     override protected void Die()
     {
         print("Player died!!1");
@@ -119,6 +112,7 @@ public class Player : Mob {
 
     void OnDrawGizmos()
     {
+        animator = GetComponent<Animator>();
         Vector2 center, size;
         GetAttackRect(out center, out size);
         Gizmos.color = Color.red;

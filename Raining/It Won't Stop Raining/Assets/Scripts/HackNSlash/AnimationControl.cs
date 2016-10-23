@@ -5,28 +5,30 @@ using System.Collections;
 [RequireComponent (typeof(Rigidbody2D))]
 public class AnimationControl : MonoBehaviour {
 
-	Rigidbody2D rb;
+	//Rigidbody2D rb;
 	SpriteRenderer sr;
+    Mob mob;
 	Vector2 lastMove;
 	Animator animator;
 
 	/// <summary> ability to face 4 directions	/// </summary>
-	public bool MultiDirectional = false;
+	public bool MultiDirectional = true;
 	/// <summary> direction to face upon spawn	/// </summary>
-	public Direction InitialDirection = Direction.Right;
+	public Direction InitialDirection = Direction.Down;
 	public enum Direction {
+		Down,
 		Up,
 		Left,
 		Right,
-		Down
 	};
 
 	void Start () {
-		animator = gameObject.GetComponent<Animator> ();
-		sr = gameObject.GetComponent<SpriteRenderer> ();
-		rb = gameObject.GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator> ();
+		sr = GetComponent<SpriteRenderer> ();
+		//rb = GetComponent<Rigidbody2D>();
+        mob = GetComponent<Mob>();
 
-		//animator.logWarnings = false;
+        animator.logWarnings = false;
 		switch (InitialDirection) {
 		case Direction.Up:
 			lastMove = MultiDirectional ? new Vector2 (0, 1) : new Vector2 (-1, 0);
@@ -46,7 +48,7 @@ public class AnimationControl : MonoBehaviour {
 	void Update () {
 		int direction = updateDirection ();
 
-		var move = rb.velocity;
+		var move = mob.velocity;
 		// include check if animator has each parameter
 		animator.SetBool("Walking", move.magnitude > 0);
 		animator.SetInteger("Direction", direction);

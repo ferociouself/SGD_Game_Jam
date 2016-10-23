@@ -11,10 +11,11 @@ public class Mob : MonoBehaviour {
     public int health;
     public int damage;
     public float speed;
-    public float attackCooldown;
 
-    protected Direction direction = Direction.Down;
-    protected bool walking = false;
+    [HideInInspector]
+    public Vector2 velocity = new Vector2();
+    //protected Direction direction = Direction.Down;
+    //protected bool walking = false;
 
     protected Rigidbody2D rigidBody;
     protected Animator animator;
@@ -30,9 +31,8 @@ public class Mob : MonoBehaviour {
 	
 	}
 
-    public void Hit(int damage)
+    public virtual void Hit(int damage)
     {
-        print("Hit: " + name + ": " + damage);
         health -= damage;
         if (health <= 0)
             Die();

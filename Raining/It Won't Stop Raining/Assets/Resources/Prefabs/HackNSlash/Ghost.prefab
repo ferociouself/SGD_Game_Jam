@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MultiDirectional: 1
-  InitialDirection: 2
+  InitialDirection: 0
 --- !u!114 &114000014053648688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   damage: 1
-  speed: 1
+  speed: 0.5
+  velocity: {x: 0, y: 0}
 --- !u!212 &212000012875893902
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -44,6 +44,8 @@ public class RacingController : MonoBehaviour {
 		if (coll.gameObject.name == "Finish Line" && passedCheckpoint) {
 			Debug.Log("Player Wins!");
 			// Player End Game
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
 		}
 	}
 }

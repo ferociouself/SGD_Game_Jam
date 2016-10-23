@@ -92,24 +92,28 @@ public class ActivateController : MonoBehaviour {
 				} else {
 					// NO START
 				}
+			break;
 			case InteractableController.ActivateType.BrickBreaker:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_BATTERIES)) {
 					// START BRICK BREAKER
 				} else {
 					// NO START
 				}
+			break;
 			case InteractableController.ActivateType.DuckHunt:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_SLINGSHOT)) {
 
 				} else {
 
 				}
+			break;
 			case InteractableController.ActivateType.TicTacToe:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_PEN)) {
 
 				} else {
 
 				}
+			break;
 			default:
 				if ((int)type > InteractableController.ITEM_START - 1) {
 					playInventory.setInventoryActive(type);

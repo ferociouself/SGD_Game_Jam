@@ -21,6 +21,8 @@ public class DogMoving : MonoBehaviour
 
 		//Turn My game object that is set to false(off) to True(on).
 		rb2d.velocity = new Vector2 (0f, 1f);
+		yield return new WaitForSeconds (2);
+		
 	}
 
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PigeonFactory : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class PigeonFactory : MonoBehaviour {
 	public string[] prefabs; //Paths to the prefabs to toss around!
 	float pigeonCooldown;
 	public Texture2D cursor;
+	public float TimeLimit;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,11 @@ public class PigeonFactory : MonoBehaviour {
 			spawnPigeon ();
 		} else {
 			pigeonCooldown -= Time.deltaTime;
+		}
+		TimeLimit -= Time.deltaTime;
+		GameObject.Find ("Canv2").GetComponentInChildren<Text> ().text = ((int)(TimeLimit)).ToString();
+		if(TimeLimit <= 0){
+			//End Game!!!!!!!
 		}
 	}
 

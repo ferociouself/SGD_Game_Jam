@@ -11,7 +11,6 @@ public class Player : Mob {
 
     public float swordRange;
 
-    //private bool canMove = true;
     private float attackTimer = 0f;
 
     override protected void Start () {
@@ -28,33 +27,27 @@ public class Player : Mob {
                 velocity.y = 1;
                 direction = Direction.Up;
                 walking = true;
-                //spriteRenderer.sprite = upSprite;
             }
             else if (Input.GetKey(DOWNKEY))
             {
                 velocity.y = -1;
                 direction = Direction.Down;
                 walking = true;
-                //spriteRenderer.sprite = downSprite;
             }
             if (Input.GetKey(LEFTKEY))
             {
                 velocity.x = -1;
                 direction = Direction.Left;
                 walking = true;
-                //spriteRenderer.sprite = leftSprite;
             }
             else if (Input.GetKey(RIGHTKEY))
             {
                 velocity.x = 1;
                 direction = Direction.Right;
                 walking = true;
-                //spriteRenderer.sprite = rightSprite;
             }
         }
         rigidBody.velocity = velocity.normalized * speed;
-        animator.SetInteger("Direction", (int)direction);
-        animator.SetBool("Walking", walking);
 
         if (attackTimer <= 0 && Input.GetKeyDown(ATTACKKEY))
         {

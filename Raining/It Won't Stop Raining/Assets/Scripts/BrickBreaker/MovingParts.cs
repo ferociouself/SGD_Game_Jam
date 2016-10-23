@@ -13,6 +13,12 @@ public class MovingParts : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rb.velocity = new Vector2 (speed * Input.GetAxis ("Horizontal"), 0);
+		if (Input.GetButton ("Left")) {
+			rb.velocity = new Vector2 (-speed, 0);
+		} else if (Input.GetButton ("Right")) {
+			rb.velocity = new Vector2 (speed, 0);
+		} else {
+			rb.velocity = new Vector2 (0, 0);
+		}
 	}
 }

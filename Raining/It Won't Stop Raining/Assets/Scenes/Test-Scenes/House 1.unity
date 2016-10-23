@@ -205,7 +205,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -464,7 +464,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -956,7 +956,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -1161,7 +1161,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -1292,7 +1292,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -2027,7 +2027,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -4751,7 +4751,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -5068,7 +5068,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -7421,7 +7421,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -7550,7 +7550,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -8681,7 +8681,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -9329,7 +9329,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}
@@ -9568,7 +9568,7 @@ Prefab:
     - target: {fileID: 114000010153429960, guid: cab08a9176bc54313abeede4f2b1eb2b,
         type: 2}
       propertyPath: type
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cab08a9176bc54313abeede4f2b1eb2b, type: 2}

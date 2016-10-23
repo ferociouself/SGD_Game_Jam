@@ -9,6 +9,7 @@ public class SceneManager : MonoBehaviour {
 	UnityEngine.SceneManagement.SceneManager SM;
 
 	Dictionary<InteractableController.ActivateType, bool> inventory;
+	Vector2 playerpos;
 
 	bool waiter;
 	float timer;
@@ -33,11 +34,16 @@ public class SceneManager : MonoBehaviour {
 		return inventory;
 	}
 
+	public Vector2 getPlayerPos(){
+		return playerpos;
+	}
+
 	void Start() { 
 		inventory = new Dictionary<InteractableController.ActivateType, bool>();
 		for (int i = InteractableController.ITEM_START - 1; i < InteractableController.ACTIVATE_LENGTH; i++) {
 			inventory.Add((InteractableController.ActivateType)i, false);
 		}
+		playerpos = new Vector2(0,0); //where we start the
 	}
 
 	void OnEnable(){
@@ -64,13 +70,13 @@ public class SceneManager : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync (sceneNumber);
 	}
 
-	public void MoveToScene(int sceneNumber, Dictionary<InteractableController.ActivateType, bool> inv) {
+	public void MoveToScene(int sceneNumber, Dictionary<InteractableController.ActivateType, bool> inv, Vector2 pos) {
 		int index = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex;
 
 		Debug.Log ("Index: " + index);
 
 		if (index == 0) {
-			SaveHome (inv);
+			SaveHome (inv, pos);
 			foreach(InteractableController.ActivateType key in inv.Keys){
 				//go through all objects in inventory that are active and
 				Debug.Log(key.ToString() + " " + inv[key].ToString());
@@ -80,8 +86,9 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 
-	private void SaveHome(Dictionary<InteractableController.ActivateType, bool> inv){
+	private void SaveHome(Dictionary<InteractableController.ActivateType, bool> inv, Vector2 pos){
 		this.inventory = inv;
+		this.playerpos = pos;
 	}
 
 	private void LoadHome(){

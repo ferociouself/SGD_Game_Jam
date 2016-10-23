@@ -58,6 +58,7 @@ public class PlayerInventoryController : MonoBehaviour {
 		}
 		inventory[item] = true;
 		ui.ActivateIcon(item);
+
 		return inventory[item];
 	}
 

@@ -16,13 +16,14 @@ public class PlayerMovementHAS : MonoBehaviour
 	bool canControl;
 	float moveHorizontal;
 	float moveVertical;
+	Vector2 finalPosition;
 
 	// Use this for initialization
 	void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
 		timer.text = "Timer: ";
-		timeLeft = 15;
+		timeLeft = 5;
 		firstTimeComplete = false;
 		secondTimeComplete = false;
 		canControl = true;
@@ -38,6 +39,8 @@ public class PlayerMovementHAS : MonoBehaviour
 		colliding = false;
 	}
 
+
+	//Hide and re-appear the gameObject. Switch justHidden to true and set hiding to true or hiding.
 	void Hide ()
 	{
 		justHidden = true;
@@ -61,10 +64,9 @@ public class PlayerMovementHAS : MonoBehaviour
 			firstTimeComplete = true;
 			canControl = false;
 		}
-		if (firstTimeComplete == true) {
-			rb2d.velocity = Vector3.zero;
-			rb2d.Sleep ();
-		}
+
+		//Trying to make the player not move
+
 		//If the second timer hits 0, disable the timer
 		if (timeLeft <= 0 && firstTimeComplete == true && secondTimeComplete == false) {
 			timer.enabled = false;
@@ -72,20 +74,20 @@ public class PlayerMovementHAS : MonoBehaviour
 
 		//Do the ceiliing of the timer
 		timer.text = "Timer: " + (int)Mathf.Ceil (timeLeft);
+
 		//If the player can be controlled i.e. the first timer hasn't ended, move the player
 		if (canControl) {
 			moveHorizontal = Input.GetAxis ("Horizontal");
 			moveVertical = Input.GetAxis ("Vertical");
+		} else {
+			rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
 		}
+
 		//If the player is not hiding and is touching a hidable object then hit 'e' and then hide the object and make the 
 		//Velocity 0
 		if (!hiding && colliding) {
 			if (Input.GetButtonDown ("Activate")) {
 				Hide ();
-				//Print if the object is hiding
-				print ("Hiding: " + hiding);
-				print ("Just Hidden: " + justHidden);
-
 				rb2d.velocity = Vector3.zero;
 				rb2d.Sleep ();
 			}
@@ -93,9 +95,9 @@ public class PlayerMovementHAS : MonoBehaviour
 
 		//If the Player is not 0 then make the velocity = to the movement * speed.
 		//Else if hiding then hit 'e' to unhide the object
-		if (!hiding)
+		if (!hiding) {
 			rb2d.velocity = new Vector2 (moveHorizontal * speed, moveVertical * speed);
-		else if (!justHidden) {
+		} else if (!justHidden) {
 			if (Input.GetButtonDown ("Activate")) {
 				Hide ();
 			}

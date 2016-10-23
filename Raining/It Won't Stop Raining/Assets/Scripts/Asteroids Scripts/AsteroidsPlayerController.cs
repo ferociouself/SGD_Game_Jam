@@ -9,7 +9,7 @@ public class AsteroidsPlayerController : MonoBehaviour {
 
 	public Vector2 bulletOffset;
 
-	public float bulletSpeed;
+	public float turnSpeed;
 
 	float curRot;
 	Vector2 force;
@@ -26,18 +26,13 @@ public class AsteroidsPlayerController : MonoBehaviour {
 
 		force = new Vector2(Mathf.Sin(Mathf.Deg2Rad * curRot), -Mathf.Cos(Mathf.Deg2Rad * curRot));
 
-		if (Input.GetButton("Up")) {
-			rb.AddForce(force * -speed);
-		}
-		if (Input.GetButton("Down")) {
-			rb.AddForce(force * speed);
-		}
+		rb.velocity = Input.GetAxis("Vertical") * force * -speed;
 
 		if (Input.GetButton("Right")) {
-			rb.angularVelocity = -speed * 20;
+			rb.angularVelocity = -speed * turnSpeed;
 		}
 		else if (Input.GetButton("Left")) {
-			rb.angularVelocity = speed * 20;
+			rb.angularVelocity = speed * turnSpeed;
 		} else {
 			rb.angularVelocity = 0.0f;
 		}

@@ -22,9 +22,10 @@ GameObject:
   - 212: {fileID: 212000010925592508}
   - 50: {fileID: 50000013263778582}
   - 58: {fileID: 58000010629897626}
+  - 114: {fileID: 114000010158415756}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011165999532}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.065, y: -0.02, z: 0}
-  m_LocalScale: {x: 0.005, y: 0.01, z: 1}
+  m_LocalPosition: {x: 2.8223288, y: 1.7374312, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.05, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,11 +69,24 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.05
+--- !u!114 &114000010158415756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011165999532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f35d9cc4a970489f88cf05cb0431f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 5
+  timeLasted: 2
 --- !u!212 &212000010925592508
 SpriteRenderer:
   m_ObjectHideFlags: 1

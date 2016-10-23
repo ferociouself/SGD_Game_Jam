@@ -33,7 +33,7 @@ public class ClickTest : MonoBehaviour {
     {
         if (values[0] == true)
         {
-           
+			gameObject.AddComponent<CareBear> ();
             tower.GetComponent<Image>().sprite = img;
         }
     }
@@ -41,7 +41,7 @@ public class ClickTest : MonoBehaviour {
     {
         if (values[1] == true)
         {
-            
+			gameObject.AddComponent<StormTrooper> ();
             tower.GetComponent<Image>().sprite = img;
         }
     }

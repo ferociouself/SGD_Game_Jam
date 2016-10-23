@@ -487,12 +487,12 @@ Prefab:
     - target: {fileID: 114000013818072014, guid: fbb5f8a2a42a84ed4be3ed23a31da6e6,
         type: 2}
       propertyPath: size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114000013818072014, guid: fbb5f8a2a42a84ed4be3ed23a31da6e6,
         type: 2}
       propertyPath: speed
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114000013818072014, guid: fbb5f8a2a42a84ed4be3ed23a31da6e6,
         type: 2}
@@ -503,6 +503,10 @@ Prefab:
         type: 2}
       propertyPath: dir.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012070969066, guid: fbb5f8a2a42a84ed4be3ed23a31da6e6, type: 2}
+      propertyPath: m_TagString
+      value: Asteroid
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbb5f8a2a42a84ed4be3ed23a31da6e6, type: 2}

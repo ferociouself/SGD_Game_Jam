@@ -9,7 +9,6 @@ public class ClickTest : MonoBehaviour {
     bool[] values = { true, false, false };
     public void Start()
     {
-        toggles = new Toggle[3];
         toggles[0].onValueChanged.AddListener((value) => { setvalue1(value); });
         toggles[1].onValueChanged.AddListener((value) => { setvalue2(value); });
         toggles[2].onValueChanged.AddListener((value) => { setvalue3(value); });

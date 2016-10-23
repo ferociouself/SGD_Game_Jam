@@ -98,7 +98,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 3199530}
-  - 114: {fileID: 3199532}
   - 114: {fileID: 3199531}
   m_Layer: 0
   m_Name: buttonClick12
@@ -136,47 +135,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &3199532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3199529}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &38210495
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +217,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 44602497}
-  - 114: {fileID: 44602499}
   - 114: {fileID: 44602498}
   m_Layer: 0
   m_Name: buttonClick16
@@ -297,47 +254,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &44602499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 44602496}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &44654872
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +262,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 44654873}
-  - 114: {fileID: 44654875}
   - 114: {fileID: 44654874}
   m_Layer: 0
   m_Name: buttonClick24
@@ -384,47 +299,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &44654875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 44654872}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &54487963
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +744,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 116877350}
-  - 114: {fileID: 116877352}
   - 114: {fileID: 116877351}
   m_Layer: 0
   m_Name: buttonClick23
@@ -908,47 +781,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &116877352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 116877349}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &121880256
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +789,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 121880257}
-  - 114: {fileID: 121880259}
   - 114: {fileID: 121880258}
   m_Layer: 0
   m_Name: buttonClick22
@@ -995,47 +826,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &121880259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 121880256}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &124261949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,7 +1065,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 187249108}
-  - 114: {fileID: 187249110}
   - 114: {fileID: 187249109}
   m_Layer: 0
   m_Name: buttonClick18
@@ -1313,47 +1102,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &187249110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 187249107}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &258733087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1257,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 294008990}
-  - 114: {fileID: 294008992}
   - 114: {fileID: 294008991}
   m_Layer: 0
   m_Name: buttonClick19
@@ -1547,47 +1294,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &294008992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 294008989}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &294516549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,7 +2256,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 583665305}
-  - 114: {fileID: 583665307}
   - 114: {fileID: 583665306}
   m_Layer: 0
   m_Name: buttonClick15
@@ -2588,47 +2293,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &583665307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 583665304}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &587569170
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,7 +3028,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 739101562}
-  - 114: {fileID: 739101564}
   - 114: {fileID: 739101563}
   m_Layer: 0
   m_Name: buttonClick20
@@ -3402,47 +3065,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &739101564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 739101561}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &813518147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3451,7 +3073,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 813518148}
-  - 114: {fileID: 813518150}
   - 114: {fileID: 813518149}
   m_Layer: 0
   m_Name: buttonClick5
@@ -3489,47 +3110,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &813518150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 813518147}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &821887039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,7 +4253,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1086114286}
-  - 114: {fileID: 1086114288}
   - 114: {fileID: 1086114287}
   m_Layer: 0
   m_Name: buttonClick17
@@ -4711,47 +4290,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1086114288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1086114285}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1092999298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,7 +4667,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1182421747}
-  - 114: {fileID: 1182421749}
   - 114: {fileID: 1182421748}
   m_Layer: 0
   m_Name: buttonClick13
@@ -5167,47 +4704,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1182421749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1182421746}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1223274049
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,7 +5022,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1272208862}
-  - 114: {fileID: 1272208864}
   - 114: {fileID: 1272208863}
   m_Layer: 0
   m_Name: buttonClick4
@@ -5564,47 +5059,6 @@ MonoBehaviour:
   - {fileID: 1759051999}
   - {fileID: 728502917}
   - {fileID: 1292051346}
---- !u!114 &1272208864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1272208861}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1281418033
 GameObject:
   m_ObjectHideFlags: 0
@@ -6781,7 +6235,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1613696188}
-  - 114: {fileID: 1613696190}
   - 114: {fileID: 1613696189}
   m_Layer: 0
   m_Name: buttonClick14
@@ -6819,47 +6272,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1613696190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1613696187}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1639613137
 GameObject:
   m_ObjectHideFlags: 0
@@ -7472,7 +6884,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1709557629}
-  - 114: {fileID: 1709557631}
   - 114: {fileID: 1709557630}
   m_Layer: 0
   m_Name: buttonClick21
@@ -7510,47 +6921,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1709557631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1709557628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1759051997
 GameObject:
   m_ObjectHideFlags: 0
@@ -7861,7 +7231,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1794013770}
-  - 114: {fileID: 1794013772}
   - 114: {fileID: 1794013771}
   m_Layer: 0
   m_Name: buttonClick10
@@ -7899,47 +7268,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1794013772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1794013769}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1806942824
 GameObject:
   m_ObjectHideFlags: 0
@@ -8189,7 +7517,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1833293173}
-  - 114: {fileID: 1833293172}
   - 114: {fileID: 1833293174}
   m_Layer: 0
   m_Name: buttonClick1
@@ -8198,47 +7525,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1833293172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1833293171}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!4 &1833293173
 Transform:
   m_ObjectHideFlags: 0
@@ -8497,7 +7783,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1841983041}
-  - 114: {fileID: 1841983043}
   - 114: {fileID: 1841983042}
   m_Layer: 0
   m_Name: buttonClick7
@@ -8535,47 +7820,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1841983043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1841983040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1001 &1882355082
 Prefab:
   m_ObjectHideFlags: 0
@@ -8769,7 +8013,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1924987506}
-  - 114: {fileID: 1924987508}
   - 114: {fileID: 1924987507}
   m_Layer: 0
   m_Name: buttonClick11
@@ -8807,47 +8050,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1924987508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1924987505}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1933476146
 GameObject:
   m_ObjectHideFlags: 0
@@ -9003,7 +8205,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1953463683}
-  - 114: {fileID: 1953463685}
   - 114: {fileID: 1953463684}
   m_Layer: 0
   m_Name: buttonClick6
@@ -9041,47 +8242,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &1953463685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1953463682}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &1976730249
 GameObject:
   m_ObjectHideFlags: 0
@@ -9090,7 +8250,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1976730250}
-  - 114: {fileID: 1976730252}
   - 114: {fileID: 1976730251}
   m_Layer: 0
   m_Name: buttonClick3
@@ -9128,47 +8287,6 @@ MonoBehaviour:
   - {fileID: 1759051999}
   - {fileID: 728502917}
   - {fileID: 1292051346}
---- !u!114 &1976730252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1976730249}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &2001615560
 GameObject:
   m_ObjectHideFlags: 0
@@ -9245,7 +8363,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2024827990}
-  - 114: {fileID: 2024827992}
   - 114: {fileID: 2024827991}
   m_Layer: 0
   m_Name: buttonClick8
@@ -9283,47 +8400,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &2024827992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2024827989}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &2042927378
 GameObject:
   m_ObjectHideFlags: 0
@@ -9394,7 +8470,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2053010141}
-  - 114: {fileID: 2053010143}
   - 114: {fileID: 2053010142}
   m_Layer: 0
   m_Name: buttonClick2
@@ -9432,47 +8507,6 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &2053010143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2053010140}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0
 --- !u!1 &2115455012
 GameObject:
   m_ObjectHideFlags: 0
@@ -9481,7 +8515,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2115455013}
-  - 114: {fileID: 2115455015}
   - 114: {fileID: 2115455014}
   m_Layer: 0
   m_Name: buttonClick9
@@ -9519,44 +8552,3 @@ MonoBehaviour:
   - {fileID: 728502917}
   - {fileID: 1759051999}
   - {fileID: 1292051346}
---- !u!114 &2115455015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2115455012}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd5e20e541558844a267569f4049d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSlots:
-  - {fileID: 500114570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  towerSelect:
-  - {fileID: 728502917}
-  - {fileID: 1759051999}
-  - {fileID: 1292051346}
-  onID: 0

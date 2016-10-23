@@ -19,8 +19,8 @@ public class TowerPlacing : MonoBehaviour
 	void Start ()
     {
         onID = -1;
-        towerSlots = new Button[24];
-        towerSelect = new Toggle[3];
+        //towerSlots = new Button[24];
+        //towerSelect = new Toggle[3];
         towerSelect[0].name = "Lego";
         towerSelect[1].name = "Care Bear";
         towerSelect[2].name = "Play Doh";

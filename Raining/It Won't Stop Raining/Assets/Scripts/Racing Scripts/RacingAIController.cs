@@ -68,6 +68,7 @@ public class RacingAIController : MonoBehaviour {
 		}
 		if (coll.gameObject.name == "Finish Line" && passedCheckpoint) {
 			Debug.Log("AI Wins!");
+			// AI End Game
 		}
 	}
 

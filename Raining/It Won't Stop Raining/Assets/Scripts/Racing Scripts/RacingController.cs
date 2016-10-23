@@ -43,6 +43,7 @@ public class RacingController : MonoBehaviour {
 		}
 		if (coll.gameObject.name == "Finish Line" && passedCheckpoint) {
 			Debug.Log("Player Wins!");
+			// Player End Game
 		}
 	}
 }

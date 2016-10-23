@@ -18,14 +18,23 @@ public class InteractableController : MonoBehaviour {
 		Rhythm,
 		Racing,
 		OperationMaze,
+		DuckHunt,
+		Asteroids,
+		BrickBreaker,
+		TicTacToe,
+		Riddle,
 		ITEM_TREAT,
 		ITEM_DRUMSTICKS,
 		ITEM_TOYSWORD,
 		ITEM_MODELBOAT,
 		ITEM_SHOES,
 		ITEM_ARMYFIGURES,
-		ITEM_HAMMER,
-		ITEM_LASERPOINTER
+		ITEM_BATTERIES,
+		ITEM_MASK,
+		ITEM_SLINGSHOT,
+		ITEM_GLASSES,
+		ITEM_PEN,
+		ITEM_BUGSPRAY
 	};
 
 	public const int ITEM_START = 7;

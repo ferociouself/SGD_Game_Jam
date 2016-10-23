@@ -22,6 +22,7 @@ public class InteractableController : MonoBehaviour {
 		Asteroids,
 		BrickBreaker,
 		TicTacToe,
+		Riddle,
 		ITEM_TREAT,
 		ITEM_DRUMSTICKS,
 		ITEM_TOYSWORD,

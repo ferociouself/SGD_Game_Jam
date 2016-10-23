@@ -46,6 +46,8 @@ public class AsteroidsPlayerController : MonoBehaviour {
 			Debug.Log("You win!");
 			won = true;
 			// End Game
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
 		}
 
 	}

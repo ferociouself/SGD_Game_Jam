@@ -29,6 +29,8 @@ public class PigeonFactory : MonoBehaviour {
 		GameObject.Find ("Canv2").GetComponentInChildren<Text> ().text = ((int)(TimeLimit)).ToString();
 		if(TimeLimit <= 0){
 			//End Game!!!!!!!
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
 		}
 	}
 

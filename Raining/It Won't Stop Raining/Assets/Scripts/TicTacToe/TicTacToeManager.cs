@@ -60,6 +60,8 @@ public class TicTacToeManager : MonoBehaviour {
 			if (isEndOfGame ()) {
 				Debug.Log ("You Won!");
 				ended = true;
+				SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+				SM.MoveToScene (0);
 			}
 		}
 	}
@@ -222,6 +224,8 @@ public class TicTacToeManager : MonoBehaviour {
 		if (isEndOfGame ()) {
 			Debug.Log ("Comp Won!");
 			ended = true;
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
 		} else {
 			playerTurn = true;
 		}

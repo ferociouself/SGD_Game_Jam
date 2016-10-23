@@ -31,18 +31,6 @@ public class PlayerMovement : MonoBehaviour {
 
 		rb.velocity = new Vector2(horiz, rb.velocity.y);
 
-		if (rb.velocity.magnitude > 0.1) {
-			gameObject.GetComponent<Animator>().SetBool("Moving", true);
-		} else {
-			gameObject.GetComponent<Animator>().SetBool("Moving", false);
-		}
-
-		if (rb.velocity.x > 0) {
-			gameObject.GetComponent<SpriteRenderer>().flipX = false;
-		} else {
-			gameObject.GetComponent<SpriteRenderer>().flipX = true;
-		}
-
 		if (Input.GetButtonDown("Jump")) {
 			rb.AddForce(Vector2.up * jumpForce);
 		}

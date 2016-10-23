@@ -30,7 +30,6 @@ public class ActivateController : MonoBehaviour {
 	}
 
 	void Activate() {
-		
 		switch (type) {
 			case InteractableController.ActivateType.TowerDefense:
 				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_ARMYFIGURES)){
@@ -45,7 +44,7 @@ public class ActivateController : MonoBehaviour {
 					Debug.Log("Hack and Slash Started!");
 					SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
 					SM.MoveToScene (4, player.GetComponent<PlayerInventoryController> ().getInventory(), player.transform.position);
-				} else {
+				}else {
 					//Tell the player that they need an item.
 					Debug.Log("Need a sword!");
 				}
@@ -59,7 +58,7 @@ public class ActivateController : MonoBehaviour {
 				}
 				break;
 			case InteractableController.ActivateType.OperationMaze:
-				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_MASK)){
+				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_LASERPOINTER)){
 					//Do things to start Operation: Maze!
 				}else {
 					//Tell the player that they need an item.
@@ -86,34 +85,6 @@ public class ActivateController : MonoBehaviour {
 					//Tell the player that they need an item.
 				}
 				break;
-			case InteractableController.ActivateType.Asteroids:
-				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_BUGSPRAY)) {
-					//START ASTEROIDS
-				} else {
-					// NO START
-				}
-			break;
-			case InteractableController.ActivateType.BrickBreaker:
-				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_BATTERIES)) {
-					// START BRICK BREAKER
-				} else {
-					// NO START
-				}
-			break;
-			case InteractableController.ActivateType.DuckHunt:
-				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_SLINGSHOT)) {
-
-				} else {
-
-				}
-			break;
-			case InteractableController.ActivateType.TicTacToe:
-				if (playInventory.isInInventory(InteractableController.ActivateType.ITEM_PEN)) {
-
-				} else {
-
-				}
-			break;
 			default:
 				if ((int)type > InteractableController.ITEM_START - 1) {
 					playInventory.setInventoryActive(type);
@@ -122,17 +93,5 @@ public class ActivateController : MonoBehaviour {
 				}
 				break;
 		}
-		/*
-		ITEM_TREAT,
-		ITEM_DRUMSTICKS,
-		ITEM_TOYSWORD,
-		ITEM_MODELBOAT,
-		ITEM_SHOES,
-		ITEM_ARMYFIGURES,
-		ITEM_BATTERIES,
-		ITEM_MASK,
-		ITEM_SLINGSHOT,
-		ITEM_GLASSES,
-		ITEM_PEN*/
 	}
 }

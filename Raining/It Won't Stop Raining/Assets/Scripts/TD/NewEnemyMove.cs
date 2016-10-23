@@ -25,7 +25,7 @@ public class NewEnemyMove : MonoBehaviour {
 
     
     /// <param name="collider"></param>
-    void OnTriggerEnter(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
        
                 if (counter == 1 || counter ==3 || counter == 5)

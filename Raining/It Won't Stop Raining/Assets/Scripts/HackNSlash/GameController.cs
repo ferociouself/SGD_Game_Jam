@@ -51,6 +51,8 @@ public class GameController : MonoBehaviour {
             {
                 print("Teh win!!1");
                 won = true;
+				SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+				SM.MoveToScene (0);
             }
         }
         else if (waveTimer > 0)

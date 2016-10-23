@@ -16,6 +16,9 @@ public class TowerPlacing : MonoBehaviour
     //int towerID;
     ////int goldCount;
 	// Use this for initialization
+
+	float timer;
+
 	void Start ()
     {
         onID = -1;
@@ -36,6 +39,8 @@ public class TowerPlacing : MonoBehaviour
         //buttons = new BoxCollider2D[3];
         towerIDTracker = new GameObject();
         onID = Int32.Parse(towerIDTracker.GetComponent<TextMesh>().text);
+
+		timer = 0.00f;
 	}
 
     public void setSprite(GameObject tower, Sprite img)
@@ -131,6 +136,11 @@ public class TowerPlacing : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-	    
+		timer += Time.deltaTime;
+
+		if (timer >= 60.00f) {
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
+		}
 	}
 }

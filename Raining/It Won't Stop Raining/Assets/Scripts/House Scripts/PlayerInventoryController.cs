@@ -19,6 +19,14 @@ public class PlayerInventoryController : MonoBehaviour {
 		}
 		ui = inventoryUIController.GetComponent<InventoryUIController>();
 	}
+
+	public void setInventory(Dictionary<InteractableController.ActivateType, bool> inv){
+		this.inventory = inv;
+		for (int i = 0; i < this.inventory.Count; i++) {
+			//go through all objects in inventory that are active and
+			//activate them
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {

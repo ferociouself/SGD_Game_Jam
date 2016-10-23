@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SceneManager : MonoBehaviour {
 
 	public static SceneManager s_instance;
+
+	Dictionary<InteractableController.ActivateType, bool> inventory;
 
 	/// <summary>
 	/// Awaken this instance.
@@ -31,5 +34,9 @@ public class SceneManager : MonoBehaviour {
 	/// <param name="sceneNumber">Scene number.</param>
 	public void MoveToScene(int sceneNumber) {
 		Application.LoadLevel (sceneNumber);
+	}
+
+	public void SaveHome(){
+		
 	}
 }

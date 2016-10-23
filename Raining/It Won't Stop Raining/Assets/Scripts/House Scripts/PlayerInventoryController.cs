@@ -10,6 +10,8 @@ public class PlayerInventoryController : MonoBehaviour {
 
 	InventoryUIController ui;
 
+	float timer;
+
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,8 @@ public class PlayerInventoryController : MonoBehaviour {
 			inventory.Add((InteractableController.ActivateType)i, false);
 		}
 		ui = inventoryUIController.GetComponent<InventoryUIController>();
+
+		timer = 0.00f;
 	}
 
 	public void setInventory(Dictionary<InteractableController.ActivateType, bool> inv){
@@ -37,6 +41,15 @@ public class PlayerInventoryController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (timer > 2.00f && timer < 5.00f) {
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager> ();
+			setInventory(SM.getInventory ());
+		} 
+
+		if (timer < 10.00f){
+			timer += Time.deltaTime;
+		} 
 	}
 
 	public bool setInventoryActive(InteractableController.ActivateType item) {

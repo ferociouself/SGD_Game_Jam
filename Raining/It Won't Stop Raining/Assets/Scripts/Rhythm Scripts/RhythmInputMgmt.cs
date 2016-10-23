@@ -15,7 +15,7 @@ public class RhythmInputMgmt : MonoBehaviour {
 	public GameObject LeftCircle;
 	public GameObject DownCircle;
 
-	Vector2 screenInWorld = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+	//Vector2 screenInWorld = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
 
 	public float Difficulty;
 	public float BASE_F; //for scoring

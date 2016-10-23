@@ -121,6 +121,8 @@ public class Player : Mob {
     override protected void Die()
     {
         print("Player died!!1");
+		SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+		SM.MoveToScene (0);
     }
 
     void OnDrawGizmos()

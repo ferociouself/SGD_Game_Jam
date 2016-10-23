@@ -11,8 +11,6 @@ public class Player : Mob {
 
     public float swordRange;
 
-    public Sprite upSprite, downSprite, leftSprite, rightSprite;
-
     SpriteRenderer spriteRenderer;
 
     override protected void Start () {
@@ -22,38 +20,27 @@ public class Player : Mob {
 
 	override protected void Update () {
         Vector2 velocity = Vector2.zero;
-        walking = false;
         if (Input.GetKey(UPKEY))
         {
             velocity.y = 1;
-            direction = Direction.Up;
-            walking = true;
-            //spriteRenderer.sprite = upSprite;
+			direction = Direction.Up;
         }
         else if (Input.GetKey(DOWNKEY))
         {
-            velocity.y = -1;
-            direction = Direction.Down;
-            walking = true;
-            //spriteRenderer.sprite = downSprite;
+			velocity.y = -1;
+			direction = Direction.Down;
         }
         if (Input.GetKey(LEFTKEY))
         {
-            velocity.x = -1;
-            direction = Direction.Left;
-            walking = true;
-            //spriteRenderer.sprite = leftSprite;
+			velocity.x = -1;
+			direction = Direction.Left;
         }
         else if (Input.GetKey(RIGHTKEY))
         {
-            velocity.x = 1;
-            direction = Direction.Right;
-            walking = true;
-            //spriteRenderer.sprite = rightSprite;
+			velocity.x = 1;
+			direction = Direction.Right;
         }
         rigidBody.velocity = velocity.normalized * speed;
-        animator.SetInteger("Direction", (int)direction);
-        animator.SetBool("Walking", walking);
 
         if (Input.GetKeyDown(ATTACKKEY))
         {

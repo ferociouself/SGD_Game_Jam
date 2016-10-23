@@ -9,9 +9,12 @@ public class RacingController : MonoBehaviour {
 
 	bool passedCheckpoint;
 
+	public AudioSource rev;
+
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D>();
+		rev.Play ();
 	}
 	
 	// Update is called once per frame
@@ -34,6 +37,8 @@ public class RacingController : MonoBehaviour {
 		else if (Input.GetButton("Left")) {
 			rb.angularVelocity = speed * 20;
 		}
+
+		rev.pitch = rb.velocity.magnitude;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {

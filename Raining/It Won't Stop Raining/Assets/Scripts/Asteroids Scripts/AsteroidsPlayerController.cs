@@ -11,6 +11,8 @@ public class AsteroidsPlayerController : MonoBehaviour {
 
 	public float turnSpeed;
 
+	public AudioSource shootSound;
+
 	float curRot;
 	Vector2 force;
 
@@ -54,7 +56,6 @@ public class AsteroidsPlayerController : MonoBehaviour {
 
 	void FireProjectile() {
 		GameObject bullet1;
-		GameObject bullet2;
 
 		Vector3 bulletOffset1 = (Vector3)(new Vector2(bulletOffset.x, bulletOffset.y));
 
@@ -65,5 +66,7 @@ public class AsteroidsPlayerController : MonoBehaviour {
 		GameObject instBullet1 = GameObject.Instantiate(bullet1);
 
 		instBullet1.GetComponent<BulletController>().SetVelocity(-force);
+
+		shootSound.Play ();
 	}
 }

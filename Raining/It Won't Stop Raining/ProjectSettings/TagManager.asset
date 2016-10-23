@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Movable
   - Node
+  - Bouncer
+  - Ball
   layers:
   - Default
   - TransparentFX

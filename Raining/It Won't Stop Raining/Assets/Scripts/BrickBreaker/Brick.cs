@@ -16,7 +16,7 @@ public class Brick : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "ball") {
+		if (other.gameObject.tag == "Ball") {
 			sendPoints ();
 			Destroy (this.gameObject);
 		}

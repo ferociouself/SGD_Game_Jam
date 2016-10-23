@@ -19,7 +19,6 @@ public class Throb : MonoBehaviour {
 		timeSinceLast = Time.time;
 		finalPos = gameObject.transform.localScale;
 		initPos = new Vector3(scale, scale, 1.0f);
-		Debug.Log ("Tempo: " + (tempo / 60).ToString());
 	}
 	
 	/// <summary>
@@ -27,8 +26,7 @@ public class Throb : MonoBehaviour {
 	/// </summary>
 	void Update () {
 		timeSinceLast += Time.deltaTime;
-		//Debug.Log ("TSL: " + timeSinceLast.ToString());
-		if (timeSinceLast >= tempo / 60) {
+		if (timeSinceLast >= 60/tempo) {
 			if (RavageMe ()) {
 				timeSinceLast = 0;
 			}
@@ -44,7 +42,6 @@ public class Throb : MonoBehaviour {
 		if (transTime >= LERP_TIME) {
 			gameObject.transform.localScale = finalPos;
 			transTime = 0.0f;
-			Debug.Log ("Finished");
 			return true;
 		}  else {
 			transTime += Time.deltaTime;

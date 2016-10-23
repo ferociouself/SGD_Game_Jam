@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - SelectButtons
+  - Movable
+  - Node
+  - Bouncer
+  - Ball
+  - Projectile
+  - Brick
   layers:
   - Default
   - TransparentFX
@@ -50,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 653063109
+    locked: 0
+  - name: Fore
+    uniqueID: 1653360839
     locked: 0

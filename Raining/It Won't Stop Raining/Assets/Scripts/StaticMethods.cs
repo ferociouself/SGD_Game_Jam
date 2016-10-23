@@ -82,4 +82,14 @@ public class StaticMethods {
 	public static Vector3 SetXOf(Vector3 vector3, float x) {
 		return new Vector3 (x, vector3.y, vector3.z);
 	}
+
+	/// <summary>
+	/// Determines if v1 is left of the specified v2.
+	/// </summary>
+	/// <returns><c>true</c> if is left the specified v1 v2; otherwise, <c>false</c>.</returns>
+	/// <param name="v1">V1.</param>
+	/// <param name="v2">V2.</param>
+	public static float IsLeft(Vector2 v1, Vector2 v2) {
+		return v1.x * v2.y - v1.y * v2.x;
+	}
 }

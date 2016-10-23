@@ -4,4 +4,24 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Test-Scenes/House.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/House 1.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Duck Hunt.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Platforming.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Racing.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Rhythm.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/TicTacToe.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Brick-Breaker.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/Asteroids.unity
+  - enabled: 1
+    path: Assets/Scenes/Test-Scenes/UltimateMaze.unity

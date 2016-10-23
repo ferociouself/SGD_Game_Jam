@@ -10,8 +10,8 @@ public class BrickFactory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		for (int j = 0; j < layers; j++) {
-			for (int i = 0; i < 25; i++) {
-				spawnBrick (new Vector2(-7.68f + (0.64f * i),4.34f - (0.32f * j)));
+			for (int i = 0; i < 24; i++) {
+				spawnBrick (new Vector2(-1.84f + (0.16f * i),2.04f - (0.06f * j)));
 			}
 		}
 	}

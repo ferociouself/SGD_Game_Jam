@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GoalKeeper : MonoBehaviour {
 
@@ -8,14 +9,19 @@ public class GoalKeeper : MonoBehaviour {
 	float timer;
 	public float delay;
 	public float speed;
-	public Text liveCounter;
 	public int lives;
+	List<GameObject> liveList;
 
 	// Use this for initialization
 	void Start () {
 		timer = 0;
 		holding = false;
-		liveCounter.text = "Lives: " + lives.ToString ();
+		liveList = new List<GameObject> ();
+		for (int i = 0; i < lives; i++) {
+			GameObject newBoi = (GameObject)(Resources.Load ("Prefabs/BrickBreaker/Life",typeof(GameObject)));
+			newBoi.transform.position = new Vector2 (-1.74f + (i * .12f),-1.55f);
+			liveList.Add (GameObject.Instantiate (newBoi));
+		}
 	}
 	
 	// Update is called once per frame
@@ -41,7 +47,8 @@ public class GoalKeeper : MonoBehaviour {
 
 	void decrementLives(){
 		lives--;
-		liveCounter.text = "Lives: " + lives.ToString ();
+		liveList [liveList.Count - 1].SetActive (false);
+		liveList.Remove (liveList[liveList.Count - 1]);
 		if (lives <= 0) {
 			//End of Game!!!
 		}

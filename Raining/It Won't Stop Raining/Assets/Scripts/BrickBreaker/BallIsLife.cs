@@ -19,13 +19,4 @@ public class BallIsLife : MonoBehaviour {
 			rb.velocity *= 0.9f;
 		}
 	}
-
-	void OnCollisionExit2D(Collision2D other){
-		if (other.gameObject.tag == "Bouncer") {
-			/*float xdif = transform.position.x - other.gameObject.transform.position.x;
-			float currTheta = Mathf.Atan2 (rb.velocity.y, rb.velocity.x);
-			float nextTheta = currTheta - /*2 * /*Mathf.Acos(/xdif/* / 1.28f);
-			rb.velocity = (new Vector2 (Mathf.Cos(nextTheta),Mathf.Sin(nextTheta))) * rb.velocity.magnitude;*/
-		}
-	}
 }

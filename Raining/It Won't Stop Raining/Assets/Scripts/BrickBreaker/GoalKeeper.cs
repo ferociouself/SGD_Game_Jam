@@ -51,6 +51,8 @@ public class GoalKeeper : MonoBehaviour {
 		liveList.Remove (liveList[liveList.Count - 1]);
 		if (lives <= 0) {
 			//End of Game!!!
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
 		}
 	}
 }

@@ -48,5 +48,11 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetButtonDown("Jump")) {
 			rb.AddForce(Vector2.up * jumpForce);
 		}
-	}
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
+        }
+
+    }
 }

@@ -18,6 +18,8 @@ public class PlayerMovementHAS : MonoBehaviour
 	float moveVertical;
 	Vector2 finalPosition;
 
+	public GameObject currentHidingSpot;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -32,6 +34,9 @@ public class PlayerMovementHAS : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		colliding = true;
+		if (other.gameObject.tag == "HidingSpot") {
+			currentHidingSpot = other.gameObject;	
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D other)

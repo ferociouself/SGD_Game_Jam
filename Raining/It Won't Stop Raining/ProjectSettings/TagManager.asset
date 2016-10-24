@@ -8,6 +8,7 @@ TagManager:
   - Node
   - Bouncer
   - Ball
+  - HidingSpot
   layers:
   - Default
   - TransparentFX
@@ -42,11 +43,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 3738778707
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Interactables
     uniqueID: 2684098947

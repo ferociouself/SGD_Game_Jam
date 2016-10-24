@@ -6,7 +6,7 @@ A fun-loving adventure game filled with object-collection, inventory management,
 
 ##### This game was made in 48 hours as a part of the 1st Annual University of Virginia Game Jam, hosted by UVA's own Student Game Developers.
 
-# TEAM
+### TEAM
 
 Zachary Danz: zsd4yr
 

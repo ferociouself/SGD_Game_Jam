@@ -37,8 +37,8 @@ public class InteractableController : MonoBehaviour {
 		ITEM_BUGSPRAY
 	};
 
-	public const int ITEM_START = 11;
-	public const int ACTIVATE_LENGTH = 22;
+	public const int ITEM_START = 12;
+	public const int ACTIVATE_LENGTH = 24;
 
 	public ActivateType type;
 

@@ -274,8 +274,8 @@ public class RhythmController : MonoBehaviour {
 				delayTime += Time.deltaTime;
 				if(delayTime >= 5.0){
 					Debug.Log ("I am done, Sir.");
-					SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
-					SM.MoveToScene (0); //THe ENd				}
+					//SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+					//SM.MoveToScene (0); //THe ENd				}
 				}
 			}
 		}

@@ -12,6 +12,8 @@ public class AsteroidController : MonoBehaviour {
 		Yuge
 	}
 
+	public AudioSource hitSound;
+
 	public AsteroidSize size;
 
 	Rigidbody2D rb;
@@ -32,6 +34,7 @@ public class AsteroidController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.CompareTag("Projectile")) {
+			hitSound.Play ();
 			Destroy(coll.gameObject);
 			if (size == AsteroidSize.Tiny) {
 				Destroy(gameObject);

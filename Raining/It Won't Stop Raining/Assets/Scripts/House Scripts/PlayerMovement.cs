@@ -26,8 +26,10 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		if (timer >= 0.20f && timer < 0.50f) {
-			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager> ();
-			this.gameObject.transform.position = SM.getPlayerPos ();
+			if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex == 0) {
+				SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager> ();
+				this.gameObject.transform.position = SM.getPlayerPos ();
+			}
 		}
 
 		float horiz = Input.GetAxis ("Horizontal") * speed;
@@ -49,5 +51,11 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetButtonDown ("Jump")) {
 			rb.AddForce (Vector2.up * jumpForce);
 		}
-	}
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
+        }
+
+    }
 }

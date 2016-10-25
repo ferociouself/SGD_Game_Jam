@@ -17,6 +17,7 @@ public class Brick : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other){
 		if (other.gameObject.tag == "Ball") {
+			
 			Destroy (this.gameObject);
 		}
 	}

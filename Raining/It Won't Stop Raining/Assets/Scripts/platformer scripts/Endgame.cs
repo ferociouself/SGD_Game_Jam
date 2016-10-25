@@ -19,6 +19,8 @@ public class Endgame : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			//End Dat GAme
+			SceneManager SM = GameObject.Find ("SceneManager").GetComponent<SceneManager>();
+			SM.MoveToScene (0);
 		}
 	}
 }

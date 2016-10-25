@@ -8,7 +8,12 @@ TagManager:
   - Node
   - Bouncer
   - Ball
+<<<<<<< HEAD
   - HidingSpot
+=======
+  - Projectile
+  - Brick
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
@@ -18,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Monsters
   - 
   - 
   - 

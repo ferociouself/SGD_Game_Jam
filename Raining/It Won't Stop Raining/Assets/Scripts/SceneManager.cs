@@ -52,7 +52,14 @@ public class SceneManager : MonoBehaviour {
 		timer = 0.00f;
 	}
 
-	void Update () {		
+	void Update () {
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
+        }
+        
+        	
 		if (waiter && timer >= 2.00f && UnityEngine.SceneManagement.SceneManager.GetActiveScene ().buildIndex == 0) {
 			LoadHome ();
 			waiter = false;

@@ -15,10 +15,11 @@ public class DogMoving : MonoBehaviour
 	public Text Lose;
 	private PlayerMovementHAS playerScript;
 
+
 	public bool foundNothide;
 	float timer;
 
-
+	public SceneManager SM;
 	public GameObject player;
 
 	// Use this for initialization
@@ -29,7 +30,7 @@ public class DogMoving : MonoBehaviour
 		state = 0;
 		Lose.text = "";
 		Dest = Entrance;
-		playerScript = GameObject.Find ("Player").GetComponent<PlayerMovementHAS> ();
+		playerScript = player.GetComponent<PlayerMovementHAS> ();
 		timer = 0.00f;
 		foundNothide = false;
 	}
@@ -51,15 +52,15 @@ public class DogMoving : MonoBehaviour
 		//Wait for 5 secs.
 		yield return new WaitForSeconds (time);
 
-		Application.LoadLevel ("HideAndSeek");
+		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync (12);
 	}
 
 	void isFound ()
 	{
 		Lose.text = "You Lose";
+		state = 5;
 		StartCoroutine (RestartGamePause (5));
 		Dest = null;
-		state = 5;
 		timer = 0.00f;
 		foundNothide = false;
 	}
@@ -86,8 +87,8 @@ public class DogMoving : MonoBehaviour
 				*/
 			case 1:
 				if (player.GetComponent<SpriteRenderer> ().enabled == true) {
-					//Dest.transform.position = player.transform.position;
-					//foundNothide = true;
+					Dest.transform.position = player.transform.position;
+					foundNothide = true;
 				}
 				if (found ()) {
 					isFound ();
@@ -96,6 +97,7 @@ public class DogMoving : MonoBehaviour
 				StartCoroutine (Pause (2));
 				do {
 					int index = (int)Random.Range (0, 5);
+					Debug.Log ("Random number: " + index);
 					newDest = possibleDests [index];
 				} while (newDest == Dest);
 				Dest = newDest;
@@ -115,6 +117,7 @@ public class DogMoving : MonoBehaviour
 			case 4:
 				// game finished
 				Lose.text = "YOU WIN";
+				SM.MoveToScene (0);
 				break;
 			}
 			state++;

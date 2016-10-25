@@ -73,8 +73,12 @@ public class PlayerMovementHAS : MonoBehaviour
 			timer.enabled = false;
 			canControl = false;
 			if (gameObject.GetComponent<SpriteRenderer> ().enabled) {
-				dog.GetComponent<DogMoving> ().Dest.transform.position = gameObject.transform.position;
-				dog.GetComponent<DogMoving> ().foundNothide = true;
+				if (dog.GetComponent<DogMoving> ()) {
+					if (dog.GetComponent<DogMoving> ().Dest != null) {
+						dog.GetComponent<DogMoving> ().Dest.transform.position = gameObject.transform.position;
+						dog.GetComponent<DogMoving> ().foundNothide = true;
+					}
+				}
 			}
 		}
 

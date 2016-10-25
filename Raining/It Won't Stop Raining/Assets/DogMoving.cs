@@ -8,12 +8,19 @@ public class DogMoving : MonoBehaviour
 	private bool isPaused;
 	private int state;
 	public float speed;
-	private GameObject Dest;
+	public GameObject Dest;
 	public GameObject Entrance;
 	public GameObject Exit;
 	public GameObject[] possibleDests;
 	public Text Lose;
 	private PlayerMovementHAS playerScript;
+
+	public bool foundNothide;
+	float timer;
+
+
+	public GameObject player;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -23,6 +30,8 @@ public class DogMoving : MonoBehaviour
 		Lose.text = "";
 		Dest = Entrance;
 		playerScript = GameObject.Find ("Player").GetComponent<PlayerMovementHAS> ();
+		timer = 0.00f;
+		foundNothide = false;
 	}
 		
 	//Making dogs after timer
@@ -51,6 +60,8 @@ public class DogMoving : MonoBehaviour
 		StartCoroutine (RestartGamePause (5));
 		Dest = null;
 		state = 5;
+		timer = 0.00f;
+		foundNothide = false;
 	}
 
 	bool found ()
@@ -64,6 +75,7 @@ public class DogMoving : MonoBehaviour
 			GameObject newDest;
 			switch (state) {
 			case 0:
+				/*
 				StartCoroutine (Pause (2));
 				do {
 					int index = (int)Random.Range (0, 5);
@@ -71,7 +83,12 @@ public class DogMoving : MonoBehaviour
 				} while (newDest == Dest);
 				Dest = newDest;
 				break;
+				*/
 			case 1:
+				if (player.GetComponent<SpriteRenderer> ().enabled == true) {
+					//Dest.transform.position = player.transform.position;
+					//foundNothide = true;
+				}
 				if (found ()) {
 					isFound ();
 					break;
@@ -97,6 +114,7 @@ public class DogMoving : MonoBehaviour
 				break;
 			case 4:
 				// game finished
+				Lose.text = "YOU WIN";
 				break;
 			}
 			state++;
@@ -110,5 +128,13 @@ public class DogMoving : MonoBehaviour
 			Vector2 destPos = Dest.transform.position;
 			transform.position = Vector2.MoveTowards (transform.position, destPos, speed * Time.deltaTime);
 		}
+		if (foundNothide) {
+			if (timer >= 2) {
+				isFound ();
+			} else {
+				timer += Time.deltaTime;
+			}
+		}
+
 	}
 }

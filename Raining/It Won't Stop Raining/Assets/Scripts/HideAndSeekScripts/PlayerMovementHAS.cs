@@ -18,6 +18,8 @@ public class PlayerMovementHAS : MonoBehaviour
 	float moveVertical;
 	Vector2 finalPosition;
 
+	public GameObject dog;
+
 	public GameObject currentHidingSpot;
 
 	// Use this for initialization
@@ -26,8 +28,8 @@ public class PlayerMovementHAS : MonoBehaviour
 		rb2d = GetComponent<Rigidbody2D> ();
 		timer.text = "Timer: ";
 		timeLeft = 5;
-		firstTimeComplete = false;
-		secondTimeComplete = false;
+		//firstTimeComplete = false;
+		//secondTimeComplete = false;
 		canControl = true;
 	}
 
@@ -64,19 +66,26 @@ public class PlayerMovementHAS : MonoBehaviour
 		timeLeft -= Time.deltaTime; 
 
 		//If the inaugural timer hits 0. reset timer to 30 and make first time to ture and disable controls
-		if (timeLeft <= 0 && firstTimeComplete == false) {
-			timeLeft = 30f;
-			firstTimeComplete = true;
+		//&& firstTimeComplete == false
+		if (timeLeft <= 0) {
+			//timeLeft = 30f;
+			//firstTimeComplete = true;
+			timer.enabled = false;
 			canControl = false;
+			if (gameObject.GetComponent<SpriteRenderer> ().enabled) {
+				dog.GetComponent<DogMoving> ().Dest.transform.position = gameObject.transform.position;
+				dog.GetComponent<DogMoving> ().foundNothide = true;
+			}
 		}
 
 		//Trying to make the player not move
 
 		//If the second timer hits 0, disable the timer
+		/*
 		if (timeLeft <= 0 && firstTimeComplete == true && secondTimeComplete == false) {
 			timer.enabled = false;
 		}
-
+		*/
 		//Do the ceiliing of the timer
 		timer.text = "Timer: " + (int)Mathf.Ceil (timeLeft);
 
@@ -102,7 +111,7 @@ public class PlayerMovementHAS : MonoBehaviour
 		//Else if hiding then hit 'e' to unhide the object
 		if (!hiding) {
 			rb2d.velocity = new Vector2 (moveHorizontal * speed, moveVertical * speed);
-		} else if (!justHidden) {
+		} else if (!justHidden && timer.enabled) {
 			if (Input.GetButtonDown ("Activate")) {
 				Hide ();
 			}

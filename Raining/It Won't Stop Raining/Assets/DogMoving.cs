@@ -13,7 +13,6 @@ public class DogMoving : MonoBehaviour
 	public GameObject Exit;
 	public GameObject[] possibleDests;
 	public Text Lose;
-	private PlayerMovementHAS playerScript;
 
 
 	public bool foundNothide;
@@ -30,7 +29,6 @@ public class DogMoving : MonoBehaviour
 		state = 0;
 		Lose.text = "";
 		Dest = Entrance;
-		playerScript = player.GetComponent<PlayerMovementHAS> ();
 		timer = 0.00f;
 		foundNothide = false;
 	}
@@ -67,7 +65,10 @@ public class DogMoving : MonoBehaviour
 
 	bool found ()
 	{
-		return Dest == playerScript.currentHidingSpot;
+		if (player.GetComponent<PlayerMovementHAS> ().currentHidingSpot == null) {
+			return true;
+		}
+		return (Dest == player.GetComponent<PlayerMovementHAS> ().currentHidingSpot);
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -86,21 +87,24 @@ public class DogMoving : MonoBehaviour
 				break;
 				*/
 			case 1:
-				if (player.GetComponent<SpriteRenderer> ().enabled == true) {
+				if (player.GetComponent<SpriteRenderer> ().enabled) {
 					Dest.transform.position = player.transform.position;
 					foundNothide = true;
 				}
 				if (found ()) {
 					isFound ();
+					Debug.Log ("Found");
 					break;
 				}
 				StartCoroutine (Pause (2));
-				do {
-					int index = (int)Random.Range (0, 5);
-					Debug.Log ("Random number: " + index);
-					newDest = possibleDests [index];
-				} while (newDest == Dest);
-				Dest = newDest;
+				if (!player.GetComponent<SpriteRenderer> ().enabled) {
+					do {
+						int index = (int)Random.Range (0, 5);
+						Debug.Log ("Random number: " + index);
+						newDest = possibleDests [index];
+					} while (newDest == Dest);
+					Dest = newDest;
+				}
 				break;
 			case 2:
 				if (found ()) {

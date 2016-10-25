@@ -45,3 +45,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: room
+    uniqueID: 2571981471
+    locked: 0
+  - name: bg
+    uniqueID: 684867633
+    locked: 0
+  - name: obj
+    uniqueID: 938795639
+    locked: 0
+  - name: player
+    uniqueID: 4271158669
+    locked: 0
+  - name: fore
+    uniqueID: 3034308553
+    locked: 0

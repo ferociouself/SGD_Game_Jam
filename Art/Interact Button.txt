@@ -1,0 +1,6 @@
+This file contains information for importing an animation into Unity.
+
+Animation Clip: Full Animation
+Sample Rate: 10
+    Frames have a constant duration.
+    No need to duplicate the last frame or change keyframes locations

@@ -1,0 +1,52 @@
+{ "frames": {
+   "Interact Button 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 25, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 25, "h": 20 },
+    "sourceSize": { "w": 25, "h": 20 },
+    "duration": 100
+   },
+   "Interact Button 1.ase": {
+    "frame": { "x": 25, "y": 0, "w": 25, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 25, "h": 20 },
+    "sourceSize": { "w": 25, "h": 20 },
+    "duration": 100
+   },
+   "Interact Button 2.ase": {
+    "frame": { "x": 50, "y": 0, "w": 25, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 25, "h": 20 },
+    "sourceSize": { "w": 25, "h": 20 },
+    "duration": 100
+   },
+   "Interact Button 3.ase": {
+    "frame": { "x": 75, "y": 0, "w": 25, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 25, "h": 20 },
+    "sourceSize": { "w": 25, "h": 20 },
+    "duration": 100
+   },
+   "Interact Button 4.ase": {
+    "frame": { "x": 100, "y": 0, "w": 25, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 25, "h": 20 },
+    "sourceSize": { "w": 25, "h": 20 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.9",
+  "format": "RGBA8888",
+  "size": { "w": 125, "h": 20 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}
